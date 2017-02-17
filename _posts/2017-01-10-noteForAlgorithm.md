@@ -28,3 +28,14 @@ categories: RG
   * smallest interval of time (x)  
   * fewest conflicts (x)  
   * accept the request that finishes first  (yes) [O(n*logn)]d
+  
+
+## Divide and conquer （分治法）
+1. Divide:divide the problem into one or more subproblems
+2. Conquer:conquer each subproblems recursively.
+3. combine:solution.
+eg.* 归并排序，    
+   * 二分查找（binary search）  
+   * Powering a number(乘方问题)  
+   * Fibonacci number(斐波那契数列)：Bottom-up,
+   * Matrix:n*n matrix = 2*2 block matrix of n/2*n/2 sub matrices
