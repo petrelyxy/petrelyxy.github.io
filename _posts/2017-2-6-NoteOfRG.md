@@ -47,7 +47,7 @@ patterns()是一个函数调用，它最多接受255参数。意识到patterns()
 	...
 	)  
 ### url()  
-url(regex, view, kwargs = None, name = None, prefix =")[source]
+url(regex, view, kwargs = None, name = None, prefix =")[source]  
 urlpatterns应该是url()实例的列表。例如  
 urlpatterns = [
 	url(r'^index/$', index_view, name = "main-view"),  
