@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "爬虫流程记录&熟悉MarkDown"
+date:   2016-12-30 11:25:36 +0800
+categories: RG
+---
+# 算法笔记  
+
+　　乘着上的算法导论课还有些映象，做一些记录。
+
+* 贪心算法  
+* 动态规划  
+  * 自顶向下
+  * 自底向上
+* 分治法  
+* 动态规划
+
+## 渐进符号、递归及解法
+f(n)=***O***(g(n))==>f(n)∈O(g(n))，这里的等号并不是平常的数学等号 ，O:类似小于等于，用于表示上界
+Omega：类似大于等于，用于表下界。
+theta:类似等于
+
+### Recursive：
+  1. Substitution method(代换法): 
+	1. guess the form of the solution
+	2. verify by ***induction***(归纳)  ：重点在于猜出形式后用数学归纳法验证
+	3. slove the consts. 
+
+	eg.T(n) = 4(n/2)+n
+
+  2. ***Recursion Tree***(递归树):
+	
+	eg. T(n) = T(n/4)+T(n/2)+n^2
+
+  3. ***Master method***(主方法)：只能运用到特定的递归上
+	T(n)=aT(n/b)+f(n);a>=1、b>1,f(n)**渐近趋正**(对于足够大的n，f(n)>0)
+
+## Divide and Conquer(分治法)
