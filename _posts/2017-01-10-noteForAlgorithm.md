@@ -2,7 +2,11 @@
 layout: post
 title:  "算法笔记"
 date:   2016-12-30 11:25:36 +0800
-categories: RG
+desc: "Notes of the course 'Algorithm Design'."
+keywords: "Algorithm Design"
+categories: [Basic]
+tags: [Algorithm Design,Algorithm]
+icon: icon-html
 ---
 # 算法笔记  
 

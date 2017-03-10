@@ -4,8 +4,8 @@
 <p>这是一个md文件测试,H2
 —</p>
 <h1 id="这是h1">这是H1</h1>
-<h1 id="这是h2">这是H2</h1>
-<p>#######这是H6</p>
+<h2 id="这是h2">这是H2</h2>
+<p>####### 这是H6</p>
 
 <p>区块引用 Blockquotes</p>
 <blockquote>
@@ -23,22 +23,26 @@ wjlkjlkjlk
 
 <blockquote>
   <ol>
-    <li>asd
+    <li>asd<br />
 2.fasfw</li>
   </ol>
 </blockquote>
 
-<p>*red
-*Green
-*Blue</p>
-
-<p>+Red
-+Green
-+Blue</p>
-
-<p>-Red
--Green
--Blue</p>
+<ul>
+  <li>red</li>
+  <li>Green</li>
+  <li>
+    <p>Blue</p>
+  </li>
+  <li>Red</li>
+  <li>Green</li>
+  <li>
+    <p>Blue</p>
+  </li>
+  <li>Red</li>
+  <li>Green</li>
+  <li>Blue</li>
+</ul>
 
 <ol>
   <li>Bird</li>
@@ -46,14 +50,16 @@ wjlkjlkjlk
   <li>Parish</li>
 </ol>
 
-<p>*Lorem inalsnlj
- adwawewerawr
-*jwkqljeqwhuohaljkj donawnklje</p>
-
-<p>*bird
-*magic</p>
-
 <ul>
+  <li>Lorem inalsnlj
+adwawewerawr</li>
+  <li>
+    <p>jwkqljeqwhuohaljkj donawnklje</p>
+  </li>
+  <li>bird</li>
+  <li>
+    <p>magic</p>
+  </li>
   <li>A list item with a blockquote:
     <blockquote>
       <p>This is a blockquote
@@ -63,18 +69,22 @@ inside a list item</p>
   <li>一列表项包含一个列表区块：
   &lt;代码挖掘了空间了空间啊三等了for
   for item in items:
-      x = y&gt;
-123. 这是数字123</li>
+      x = y
+    <blockquote>
+
+      <p>123. 这是数字123</p>
+    </blockquote>
+  </li>
 </ul>
 
-<p>这是一个普通段落：
+<p>这是一个普通段落：<br />
 	这是一个代码区块。</p>
 
 <p>Here is an example of AppleScript:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>tell application "Foo"
 	beep
-end tell *********** -------
+end tell   *********** -------
 </code></pre>
 </div>
 

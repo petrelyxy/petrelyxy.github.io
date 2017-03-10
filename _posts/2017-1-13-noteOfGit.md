@@ -1,8 +1,12 @@
 ---
 layout: post
 title:  "git使用笔记"
-date:   2017-01-13 11:25:36 +0800
-categories: mess
+date:   2016-12-30 11:25:36 +0800
+desc: "using git."
+keywords: "Jekyll"
+categories: [Mess]
+tags: [git]
+icon: icon-html
 ---  
 ## 概念
 <span id="concept"></span>

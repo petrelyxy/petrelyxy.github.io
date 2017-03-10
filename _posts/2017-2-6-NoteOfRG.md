@@ -2,7 +2,11 @@
 layout: post
 title:  "RG阅读笔记!"
 date:   2017-02-07 11:25:36 +0800
-categories: RG
+desc: "record how i read RG."
+keywords: "RG"
+categories: [Mess]
+tags: [RG]
+icon: icon-html
 ---
 #说明
 RG项目使用Django框架来做开发，Django框架使用的为MTV模式（Models，Templates，Views），与MVC模式类似  

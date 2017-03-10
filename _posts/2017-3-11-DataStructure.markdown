@@ -2,7 +2,11 @@
 layout: post
 title: "Data Structure"
 date:  2017-03-04 09:53:20 +0800
-categories: 数据结构
+desc: "Always be fimiliar with these DS"
+keywords: "DataStructure,Queue,heap,Array"
+categories: [Basic]
+tags: [DS]
+icon: icon-html
 ---
 基本类型
 1. 队列, queue

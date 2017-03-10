@@ -1,8 +1,12 @@
 ---
 layout: post
-title:  "python笔记"
-date:   2017-01-18 11:25:36 +0800
-categories: python
+title:  "Python 笔记"
+date:   2017-01-31
+desc: "some gain from learning"
+keywords: "Python"
+categories: [Python]
+tags: [self-learning,Python]
+icon: icon-html
 ---
 # python笔记
 

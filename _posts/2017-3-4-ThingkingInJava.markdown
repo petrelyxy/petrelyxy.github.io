@@ -1,10 +1,13 @@
 ---
 layout: post
-title: "Thinking in java"
-date:  2017-03-04 09:53:20 +0800
-categories:Java
+title:  "Thinking in Java"
+date:   2017-01-31
+desc: "notes from reading 'Thinking in Java'."
+keywords: "Java,Thinking in Java"
+categories: [Java]
+tags: [Java]
+icon: icon-html
 ---
-# Thinking in Java 笔记
 目录：  
 1. [对象导论](#CHA1)  
 2. [一切都是对象](#CHA2)    

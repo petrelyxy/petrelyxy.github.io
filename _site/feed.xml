@@ -1,12 +1,739 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-01-05T10:17:04+08:00</updated><id>http://localhost:4000//</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><entry><title type="html">Markdowntest</title><link href="http://localhost:4000/2017/01/04/MarkdownTest.html" rel="alternate" type="text/html" title="Markdowntest" /><published>2017-01-04T00:00:00+08:00</published><updated>2017-01-04T00:00:00+08:00</updated><id>http://localhost:4000/2017/01/04/MarkdownTest</id><content type="html" xml:base="http://localhost:4000/2017/01/04/MarkdownTest.html">&lt;script src=&quot;raphael-min.js&quot;&gt;&lt;/script&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>petrel</title>
+    <description>petrel's blog,use Jekyll and github pages.</description>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 10 Mar 2017 15:41:23 +0800</pubDate>
+    <lastBuildDate>Fri, 10 Mar 2017 15:41:23 +0800</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Data Structure</title>
+        <description>&lt;p&gt;基本类型&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;队列, queue&lt;/li&gt;
+  &lt;li&gt;堆, heap&lt;/li&gt;
+  &lt;li&gt;栈,&lt;/li&gt;
+  &lt;li&gt;数组, Array&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In Java
+&lt;a href=&quot;http://blog.csdn.net/u010947402/article/details/51878166&quot;&gt;Java中有集中常用的数据结构&lt;/a&gt;.主要分为Collection和Map两个主要接口&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 04 Mar 2017 09:53:20 +0800</pubDate>
+        <link>http://localhost:4000//basic/2017/03/04/DataStructure.html</link>
+        <guid isPermaLink="true">http://localhost:4000//basic/2017/03/04/DataStructure.html</guid>
+        
+        <category>DS</category>
+        
+        
+        <category>Basic</category>
+        
+      </item>
+    
+      <item>
+        <title>心得</title>
+        <description>&lt;h1 id=&quot;索引&quot;&gt;索引&lt;/h1&gt;
+&lt;p&gt;什么是索引？它的作用是什么？在哪些场合下适用？&lt;/p&gt;
+
+&lt;h1 id=&quot;模型&quot;&gt;模型&lt;/h1&gt;
+&lt;p&gt;在Django与Spring框架中与数据库的链接中都存在一个模型层（&lt;strong&gt;M&lt;/strong&gt;TV,&lt;strong&gt;M&lt;/strong&gt;VC），模型层的作用是什么？直接封装原始SQL语句或者操作数据库的原生语句（例如SSDB）与利用模型层与数据库交互的区别在哪？是否是松耦合的关系？&lt;/p&gt;
+</description>
+        <pubDate>Wed, 08 Feb 2017 23:14:23 +0800</pubDate>
+        <link>http://localhost:4000//mess/2017/02/08/SomeGain.html</link>
+        <guid isPermaLink="true">http://localhost:4000//mess/2017/02/08/SomeGain.html</guid>
+        
+        
+        <category>Mess</category>
+        
+      </item>
+    
+      <item>
+        <title>Problems</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;SSDB没有模糊查询功能，目前模糊查询为将整个表拉下来再做模糊匹配，显然速率极慢是不可行方案。根据SSDB作者ideawu所说，推荐使用搜索引擎来实现模糊查询功能。实际上，其他数据库例如MySQL虽然支持如’Selecet * from a where LIKE %something%’这种模糊查询，但由于此类搜索无法使用索引，只能做全表扫描，效率依然会很慢，可能的解决方向有：
+    &lt;ol&gt;
+      &lt;li&gt;搜索引擎：sphinx，lucene，solrpy，Paoding等&lt;/li&gt;
+      &lt;li&gt;实现全文检索？？？ 似乎可以与搜索引擎联系,可以对表中的某一个字段做全文检索，应该是可行方案。&lt;/li&gt;
+      &lt;li&gt;分表：负载均衡，将大表分为多个小表，也不太现实&lt;/li&gt;
+      &lt;li&gt;索引（全文索引）：似乎不可行，因为LIKE %%不使用索引。需要学习什么是索引。&lt;/li&gt;
+      &lt;li&gt;存储过程：不懂，啥玩意儿？类似分页处理，对应操作系统的页面io，提高读取磁盘内容的效率。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;参考链接：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/jinshuaiwang/article/details/19763503&quot;&gt;采用全文索引解决模糊查询速度慢的问题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bbs.csdn.net/topics/340155816&quot;&gt;大数据量模糊查询速度如何优化&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Wed, 08 Feb 2017 14:58:00 +0800</pubDate>
+        <link>http://localhost:4000//mess/2017/02/08/problem.html</link>
+        <guid isPermaLink="true">http://localhost:4000//mess/2017/02/08/problem.html</guid>
+        
+        <category>problem</category>
+        
+        
+        <category>Mess</category>
+        
+      </item>
+    
+      <item>
+        <title>RG阅读笔记!</title>
+        <description>&lt;p&gt;#说明
+RG项目使用Django框架来做开发，Django框架使用的为MTV模式（Models，Templates，Views），与MVC模式类似&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Model&lt;/strong&gt; ：负责业务对象和数据库的关系映射（ORM） 。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Template&lt;/strong&gt; ： 负责如何把页面展示给用户（html）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;View&lt;/strong&gt; ： 负责业务逻辑。&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;需要一个URL分发器&lt;/em&gt;&lt;/strong&gt;，将URL的页面请求分发给不同的View处理。在RG项目中，它位于project/urls.py&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;值得注意的是，使用的数据库为SSDB，而Django并没有能与SSDB良好交互的api，所以此项目中并没有定义数据对象的Model，而是在/ResearchGo/BaseSSDB.py中封装了SSDB数据库的CRUD等操作。所以Django自带的后台管理功能也许无法良好的利用。  本文主要关注与View。&lt;/p&gt;
+
+&lt;p&gt;在已经写好的项目文件中，view文件位于’ResearchGo/’而不是’ResearchGo/view/’下。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#RG&quot;&gt;/ResearchGo&lt;/a&gt;下主要负责数据库操作封装，业务逻辑和用户交互。&lt;br /&gt;
+&lt;a href=&quot;#server&quot;&gt;/server&lt;/a&gt;下主要负责处理爬取好的数据，并将它们更新到数据库中。&lt;/p&gt;
+
+&lt;h2 id=&quot;页面跳转urlspy&quot;&gt;&lt;a href=&quot;http://python.usyiyi.cn/translate/django_182/ref/urls.html#url&quot;&gt;页面跳转：urls.py&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;patterns&quot;&gt;patterns()&lt;/h3&gt;
+&lt;p&gt;主要使用了patterns()函数（自django1.8版本已被启用），urlpatterns应该是django.conf.urls.url()实例的简单列表。&lt;br /&gt;
+一个函数，它接受前缀和任意数量的URL模式，并返回django需要的格式的URL模式列表。&lt;/p&gt;
+
+&lt;p&gt;patterns()的第一个参数是字符串prefix。示例如下：&lt;br /&gt;
+	from django.conf.urls import patterns, url
+	urlpatterns = patterns(‘’,&lt;br /&gt;
+		url(r’^articles/([0-9]{4})/$’, ‘news.views.year_archive’),
+		url(r’^articles/([0-9]{4})/([0-9]{2})/$’, ‘news.views.month_archive’),
+		url(r’^articles/([0-9]{4})/(0-9){2})/([0-9]+)$’, ‘news.views.article_detail’),
+)&lt;/p&gt;
+
+&lt;p&gt;在此示例中， 每个示例都有一个&lt;strong&gt;公共前缀&lt;/strong&gt;-‘news.views’。可以使用patterns()函数的第一个参数来指定要应用于每个视图函数的前缀， 而不是在urlpatterns中为每个条目输入该值。&lt;br /&gt;
+则上面的例子可以更简洁地写成：&lt;br /&gt;
+	from django.conf.urls import patterns, url
+	urlpatterns = patterns(‘news.views’,&lt;br /&gt;
+		url(r’^articles/([0-9]{4})/$’, ‘year_archive’),&lt;br /&gt;
+		url(r’^articles/([0-9]{4})/([0-9]{2})/$’, ‘month_archive’),&lt;br /&gt;
+		url(r’^articles/([0-9]{4})/([0-9]{2})/([0-9]+)/$’, ‘article_detail),&lt;br /&gt;
+)&lt;/p&gt;
+
+&lt;p&gt;patterns()是一个函数调用，它最多接受255参数。意识到patterns()返回一个Python列表，所以可以拆分列表的构造。
+	urlpatterns = patterns(‘’,&lt;br /&gt;
+	…
+	)&lt;br /&gt;
+	urlpatterns += patterns(‘’,&lt;br /&gt;
+	…
+	)&lt;/p&gt;
+&lt;h3 id=&quot;url&quot;&gt;url()&lt;/h3&gt;
+&lt;p&gt;url(regex, view, kwargs = None, name = None, prefix =”)[source]&lt;br /&gt;
+urlpatterns应该是url()实例的列表。例如&lt;br /&gt;
+urlpatterns = [&lt;br /&gt;
+	url(r’^index/$’, index_view, name = “main-view”),&lt;br /&gt;
+]&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;RG&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;researchgo&quot;&gt;/ResearchGo&lt;/h2&gt;
+&lt;p&gt;/ResearchGo下的文件主要的作用是业务逻辑和与用户交互。&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;server&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;server&quot;&gt;/server&lt;/h2&gt;
+&lt;p&gt;对于每一个需要处理的目标(期刊/会议)都具有两个处理的文件baseinfo和cited，如下面的路径所示：&lt;br /&gt;
+	yangxinyu@yangxinyu-QJW4:/media/yangxinyu/WINPE_YXY/Data/New_Data/SIMULATION MODELLING PRACTICE AND THEORY2003-2003$ ls&lt;br /&gt;
+	SIMULATION MODELLING PRACTICE AND THEORY2003-2003Cited.json&lt;br /&gt;
+	SIMULATION MODELLING PRACTICE AND THEORY2003-2003.json&lt;br /&gt;
+在使用Insert.py插入paper表时会使用Journal基本信息表中的信息，所以&lt;strong&gt;若Journal基本信息表为空，应当先执行对Journal基本信息表的插入&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;baseinfo中存储着期刊中每个文章的具体相关信息，cited中存放着文章的被引用信息。从这两个文件获取需要的信息并插入数据库中，首先要了解文件的结构。在传递来的json文件中，这一个文件被当作一个大的列表传递进来，每一个列表项为一个字典，字典中即是文章的具体相关信息。&lt;/p&gt;
+
+&lt;h3 id=&quot;insertpy&quot;&gt;Insert.py&lt;/h3&gt;
+&lt;p&gt;从baseinfo和cited两个json文件中提取相关的信息并插入数据库表中。其中Paper表中存有文章的详细相关信息，而Journal表、Author表、Keyword表和organization表用来映射paper表，拥有相似的结构和统一的value格式。&lt;br /&gt;
+Class Insert():&lt;br /&gt;
+|–__init__(self,ssdb,filename,basedata,citedata,paperId=None)&lt;br /&gt;
+|–__call__(self)&lt;br /&gt;
+|–__del__(self)&lt;br /&gt;
+|–getData(self):  利用PaperItems(一个以字典为列表项的列表，字典包含一个文章的相关信息)来根据文章标题来匹配两个文件中的文章，然后将cited中的信息添加到PaperItems中，通过比较PaperItems和CiteItems中的信息完成了对两个json文件的遍历，&lt;strong&gt;并将文章的cited信息添加到了PaperItems中&lt;/strong&gt;，这也是此函数的目标功能。接下来通过insertData完成数据的插入&lt;br /&gt;
+|–insertData(self,PaperItem):对PaperItems的一个项进行去空格、大小写处理、年份段判断、格式比较转换、计算文章档次、过长信息截短等操作后将数据插入相关数据表中。其中有paper表、journal表、organization表、email表、author表、author_baseinfo表、keyword表。&lt;br /&gt;
+|–paper(self,name,dic):插入一个字典到$Paper$+name中，在insertData中被调用来插入文章信息。&lt;br /&gt;
+|–paper_one(self,name,key,value):将key-value插入到$Paper$+name表中，用于对hashmap插入单个键值，如插入计算后的level值。&lt;br /&gt;
+|–author(self,name,key,value):插入author表&lt;br /&gt;
+|–author_baseinfo(self,key,value):插入author_baseinfo表&lt;br /&gt;
+|–paperemail(self,name,key,value):插入PaperEmial表&lt;br /&gt;
+|–keyword(self,name,key,value):插入keyword表&lt;br /&gt;
+|–journal(self,name,key,value):插入journal表&lt;br /&gt;
+|–organization(self,name,key,value):插入organization表&lt;br /&gt;
+|–categories_cite(self,Journal_ls):计算被引用的情况&lt;br /&gt;
+|–transform(self,PaperItem):调用json.dumps对数据进行格式转化&lt;/p&gt;
+</description>
+        <pubDate>Tue, 07 Feb 2017 11:25:36 +0800</pubDate>
+        <link>http://localhost:4000//mess/2017/02/07/NoteOfRG.html</link>
+        <guid isPermaLink="true">http://localhost:4000//mess/2017/02/07/NoteOfRG.html</guid>
+        
+        <category>RG</category>
+        
+        
+        <category>Mess</category>
+        
+      </item>
+    
+      <item>
+        <title>Thinking in Java</title>
+        <description>&lt;p&gt;目录：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#CHA1&quot;&gt;对象导论&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#CHA2&quot;&gt;一切都是对象&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;操作符&lt;/li&gt;
+  &lt;li&gt;控制执行流程&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#CHA5&quot;&gt;&lt;strong&gt;初始化与清理&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;访问控制权限&lt;/li&gt;
+  &lt;li&gt;复用类&lt;/li&gt;
+  &lt;li&gt;多态&lt;/li&gt;
+  &lt;li&gt;接口&lt;/li&gt;
+  &lt;li&gt;内部类&lt;/li&gt;
+  &lt;li&gt;持有对象&lt;/li&gt;
+  &lt;li&gt;通过异常处理错误&lt;/li&gt;
+  &lt;li&gt;字符串&lt;/li&gt;
+  &lt;li&gt;类型信息&lt;/li&gt;
+  &lt;li&gt;泛型&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;数组&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;容器深入研究&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Java I/O系统&lt;/li&gt;
+  &lt;li&gt;枚举类型&lt;/li&gt;
+  &lt;li&gt;注解&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;并发&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;图形化用户界面&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;span id=&quot;CHA1&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第1章--对象导论&quot;&gt;第1章  对象导论&lt;/h2&gt;
+&lt;h3 id=&quot;11-抽象过程&quot;&gt;1.1 抽象过程&lt;/h3&gt;
+&lt;p&gt;所有编程语言都提供抽象机制。可以认为，人们所能解决的问题的复杂性直接取决于抽象的类型和质量。&lt;br /&gt;
+Alan Kay曾经总结了第一个成功的面向对象的语言、同时也是Java所基于的语言之一的Smalltalk的五个基本特性，这些特性表现了一种纯粹的面向对象程序设计方式：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;万物皆为对象&lt;/li&gt;
+  &lt;li&gt;程序是对象的集合&lt;/li&gt;
+  &lt;li&gt;每个对象都有自己的由其他对象所构成的存储。？？？？&lt;/li&gt;
+  &lt;li&gt;每个对象都拥有其类型。按照通用的说法，“每个对象都是某个类的一个实例。”&lt;/li&gt;
+  &lt;li&gt;某一特定类型的所有对象都可以接受同样的信息。&lt;br /&gt;
+Booch对对象提出了一个更加简洁的描述：对象具有状态(内部数据)、行为(由方法产生)和标识(内存地址)。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;12-每个对象都有一个接口&quot;&gt;1.2 每个对象都有一个接口&lt;/h3&gt;
+&lt;p&gt;所有的对象都是唯一的，但同时也是具有相同特性和行为的对象所归属的类的一部分。类描述了具有相同特性(数据元素)和行为(功能)的对象集合，&lt;strong&gt;&lt;em&gt;所以一个类实际上就是一个数据类型&lt;/em&gt;&lt;/strong&gt;。OOP程序员可以通过定义类来适应问题，而不再被迫只能使用现有的用来表示机器中存储单元的数据类型。&lt;br /&gt;
+一旦类被建立，就可以随心所欲地创建类的任意个对象，然后去操作他们。&lt;br /&gt;
+怎样才能获得有用的对象？？&lt;strong&gt;&lt;em&gt;每个对象都只能满足某些请求，这些请求由对象的接口所定义，决定接口的便是类型。&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+接口确定了对某一特定对象所能发出的请求。但是，在程序中必须由满足这些请求的代码。这些代码和隐藏的数据一起构成了实现。在类型中，每一个可能的请求都有一个方法与之关联，当项对象发送请求时， 与之相关联的方法就会被调用。&lt;/p&gt;
+
+&lt;h3 id=&quot;13-每个对象都提供服务&quot;&gt;1.3 每个对象都提供服务&lt;/h3&gt;
+&lt;p&gt;将对象看作“服务提供者”&lt;/p&gt;
+
+&lt;h3 id=&quot;14-被隐藏的具体实现&quot;&gt;1.4 被隐藏的具体实现&lt;/h3&gt;
+&lt;p&gt;访问控制：Java用三个关键字在类的内部设定边界： public、 private、 protected。&lt;em&gt;这些访问控制词(access specifier)决定了紧跟其后被定义的东西可以被谁使用&lt;/em&gt;：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;public:表示紧跟其后的元素对任何人都是可用的&lt;/li&gt;
+  &lt;li&gt;private: 表示除类型创建者和内部方法之外的任何人都不能访问元素。&lt;/li&gt;
+  &lt;li&gt;protected： 与private作用相当， 差别仅在于继承的类可以访问protected成员， 但是不能访问private成员。&lt;/li&gt;
+  &lt;li&gt;默认的访问权限(包访问权限)：当没有使用任何访问指定词时发挥作用，类可以访问在同一个包中的其他类的成员，但是在包之外， 这些成员如同指定了private一样。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;15-复用的具体实现&quot;&gt;1.5 复用的具体实现&lt;/h3&gt;
+&lt;p&gt;最简单地复用某个类的方式就是直接使用该类的一个对象，也可以将那个类的一个#对象#置于某个新的类中(这种方式称为组合)。我们称其为”创建一个成员对象”。新的类可以由任意数量、 任意类型的其他对象以任意可以实现新的类中想要的功能的方式所组成。如果组合是动态发生的，那么它通常被称为聚合。组合经常被视为“has-a”(拥有)关系。&lt;strong&gt;新类的成员对象通常都被声明为private&lt;/strong&gt;，使得使用新类的客户端程序不能访问它们。&lt;em&gt;这也使得你可以在不干扰现有客户端代码的情况下，修改这些成员。也可以在运行时修改这些成员对象， 以实现动态修改程序的行为&lt;/em&gt;。 组合带来了极大的灵活性&lt;/p&gt;
+
+&lt;h3 id=&quot;16-继承&quot;&gt;1.6 继承&lt;/h3&gt;
+&lt;p&gt;在创建了一个类之后， 即使另一个新类与其具有相似的功能， 你还是得重新创建一个新类。继承让我们能够以现有的类为基础， 复制它， 然后通过添加和修改这个副本来创建新类。&lt;br /&gt;
+有两种方法可以使基类与导出类产生差异。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;添加新方法， (is-like-a base class，基类无法访问新添加的方法。)&lt;/li&gt;
+  &lt;li&gt;改变现有基类的方法-覆盖(overriding)  (is-a base class,替代原则，导出类对象可以完全替代一个基类对象)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;17-伴随多态的可互换对象&quot;&gt;1.7 伴随多态的可互换对象&lt;/h3&gt;
+&lt;p&gt;将一个对象当做其基类的对象来对待而不是当做它所属的特定类型来对待。泛化，OOP中程序知道运行时才能确定代码的地址-后期绑定或动态绑定。 在C++中使用virtual关键字来实现，而在Java中，动态绑定是默认行为， 不需要添加额外的关键字来实现多态。&lt;/p&gt;
+
+&lt;h3 id=&quot;18-单根继承结构&quot;&gt;1.8 单根继承结构&lt;/h3&gt;
+&lt;p&gt;在Java中（事实上还包括除C++以外的所有OOP语言），所有的类最终都继承自单一的基类。在Java中，这个终极基类的名字是Object。&lt;br /&gt;
+优势：垃圾回收器的实现变得容易得多等等。&lt;/p&gt;
+
+&lt;h3 id=&quot;19-容器&quot;&gt;1.9 容器&lt;/h3&gt;
+&lt;p&gt;通常来说， 如果不知道在解决某个特定问题时需要多少个对象， 或者它们将存活多久， 那么就不可能知道如何存储这些对象。 如何才能知道需要多少空间来创建这些对象呢？&lt;br /&gt;
+容器在任何需要时都可以扩充自己以容纳你置于其中的所有东西。因此不需要知道将来会把多少个对象置于容器中，只需要创建一个容器对象， 然后让它处理所有细节。
+List(用于存储序列),Map(也被称为关联数组，用来建立对象之间的关联)，Set(每种对象类型只持有一个)，以及诸如队列、 树、 堆栈等更多的构件。&lt;/p&gt;
+
+&lt;h3 id=&quot;191-参数化类型&quot;&gt;1.9.1 参数化类型&lt;/h3&gt;
+&lt;p&gt;向上转型，向下转型，参数化类型–范型&lt;类型信息&gt;。例如， 可以用下面的语句来创建一个存储Shape的ArrayList：  
+ArrayList&lt;Shape&gt; shapes = new ArrayList&lt;Shape&gt;();&lt;/Shape&gt;&lt;/Shape&gt;&lt;/类型信息&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;110-对象的创建和生命期&quot;&gt;1.10 对象的创建和生命期&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;C++方式，效率，在编写程序时确定对象的存储空间和生命周期，将对象置于堆栈或静态存储区域来实现。&lt;/li&gt;
+  &lt;li&gt;动态内存分配方式。Java在被称为堆(heap)的内存池中动态地创建对象。在被需要时才被分配空间，所以需要大量的时间在堆中分配存储空间。每当想要创建新的对象时，就要使用new关键字来构建此对象的动态实例。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;111-异常处理处理错误&quot;&gt;1.11 异常处理：处理错误&lt;/h3&gt;
+&lt;p&gt;pass for now&lt;/p&gt;
+
+&lt;h3 id=&quot;112-并发编程&quot;&gt;1.12 并发编程&lt;/h3&gt;
+&lt;p&gt;pass for now&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;CHA2&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第2章--一切都是对象&quot;&gt;第2章  一切都是对象&lt;/h2&gt;
+&lt;h3 id=&quot;21-用引用操纵对象&quot;&gt;2.1 用引用操纵对象&lt;/h3&gt;
+&lt;p&gt;引用：遥控器；对象：遥控器。&lt;/p&gt;
+&lt;h3 id=&quot;22-必须由你创建所有对象&quot;&gt;2.2 必须由你创建所有对象&lt;/h3&gt;
+&lt;p&gt;一旦创建了一个引用，就希望它能与一个新的对象相关联。通常用new操作符来实现这一目的。&lt;strong&gt;new 关键字的意思是 “给我一个新对象”&lt;/strong&gt;&lt;br /&gt;
+所有的Java对象都存储在堆中。&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;堆&lt;/em&gt;&lt;/strong&gt;：一种通用的内存池（位于RAM区）&lt;br /&gt;
+非RAM存储：如果数据完全存活于程序之外，那么他可以不收程序的任何控制， 在程序没有运行时也可以存在。 其中两个基本的例子是&lt;em&gt;流对象&lt;/em&gt;和&lt;em&gt;持久化对象&lt;/em&gt;。在流对象中， 对象转化称为字节流， 通常被发送给另一个机器。在“持久化对象”中，对象被存放于磁盘上，因此， 即使程序终止， 它们仍可以保持自己的状态。 这种存储方式的技巧在于：把对象转化称可以存放在其他媒介上的事物，在需要时， 可恢复成常规的、 基于RAM的对象。如JDBC和Hibernate的机制&lt;/p&gt;
+
+&lt;h3 id=&quot;23-永远不需要销毁对象&quot;&gt;2.3 永远不需要销毁对象&lt;/h3&gt;
+&lt;h4 id=&quot;231-作用域&quot;&gt;2.3.1 作用域&lt;/h4&gt;
+&lt;p&gt;作用域决定了在其内定义的变量名的可见性和生命周期。在C、C++、Java中， 作用域由花括号的位置决定。在作用域里定义的变量只可用于作用域结束之前。&lt;/p&gt;
+&lt;h4 id=&quot;232-对象的作用域&quot;&gt;2.3.2 对象的作用域&lt;/h4&gt;
+&lt;p&gt;Java对象不具备和基本类型一样的生命周期。当用new创建一个Java对象时， 它可以存活于作用域之外，但其引用在作用域终点就消失了。然而这个对象仍继续占据内存空间，通过Java的垃圾回收器来释放这些对象的内存空间.&lt;/p&gt;
+
+&lt;h4 id=&quot;241字段和方法&quot;&gt;2.4.1字段和方法&lt;/h4&gt;
+&lt;p&gt;当类个某个成员是基本数据类型时，即使没有进行初始化，Java也会确保它获得一个默认值，然而局部变量得到的值可能是任意值。&lt;/p&gt;
+
+&lt;h4 id=&quot;263-static关键字&quot;&gt;2.6.3 static关键字&lt;/h4&gt;
+&lt;p&gt;当声明一个事物是static时，就意味着这个域或方法不会与包含它的类的任何对象关联在一起。这些数据和方法是为整个类而不是类的某个特定对象存在的。&lt;br /&gt;
+static方法的一个重要用法就是在不创建任何对象的前提下就可以调用它。&lt;/p&gt;
+
+&lt;h4 id=&quot;281-注释文档&quot;&gt;2.8.1 注释文档&lt;/h4&gt;
+&lt;p&gt;javadoc：对文档的维护，所有的javadoc命令都是只能在“/&lt;em&gt;*”注释中出现， 和通常一样，注释结束与“&lt;/em&gt;/”。&lt;/p&gt;
+
+&lt;h3 id=&quot;29-编码风格&quot;&gt;2.9 编码风格&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;类的首字母要大写&lt;/li&gt;
+  &lt;li&gt;类用驼峰风格命名(即不要使用下划线分隔单词)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;433-逗号操作符&quot;&gt;4.3.3 逗号操作符&lt;/h4&gt;
+&lt;p&gt;注意是逗号操作符而不是逗号分隔符(逗号用作分隔符时用来分隔函数的不同参数)，Java中唯一用到逗号操作符的地方就是for循环的控制表达式。在控制表达式的初始化和步进控制部分， 可以使用一系列由逗号分隔的语句；而且那些语句均会独立执行。eg&lt;br /&gt;
+for(int i = 1, j = i + 10; i &amp;lt; 5; i++,  j = i * 2)&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;CHA5&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第5章-初始化与清理&quot;&gt;第5章 初始化与清理&lt;/h2&gt;
+&lt;h3 id=&quot;51-用构造器确保初始化&quot;&gt;5.1 用构造器确保初始化&lt;/h3&gt;
+&lt;p&gt;构造器采用与类相同的名称。“每个方法首字母小写”的编码风格并不适合构造器。&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;this&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;54-this关键字&quot;&gt;5.4 this关键字&lt;/h3&gt;
+&lt;p&gt;只有当需要明确指出对当前对象的引用， 才需要使用this关键字。&lt;strong&gt;this关键字只能在方法内部使用，表示对调用方法的那个对象的引用。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;542-static的含义&quot;&gt;5.4.2 static的含义&lt;/h4&gt;
+&lt;p&gt;了解了this关键字之后，就能更全面地理解static方法的含义。&lt;strong&gt;static方法就是没有&lt;a href=&quot;#this&quot;&gt;this&lt;/a&gt;的方法。&lt;/strong&gt;在static方法的内部不能调用非静态方法，反过来则是可行的。可以在没有创建任何对象的前提下， 仅仅通过类本身来调用static方法，这实际上正是static方法的主要用途。&lt;/p&gt;
+
+&lt;h3 id=&quot;55-清理终结处理和垃圾回收&quot;&gt;5.5 清理：终结处理和垃圾回收&lt;/h3&gt;
+&lt;p&gt;Java由垃圾回收器负责回收无用对象占据的内存资源。由于垃圾回收器只知道释放那些经由new分配的内存，所以它不知道如何释放并非使用new获得的“特殊”的内存区域。为了应对这种情况，Java允许在类中定义一个名为finalize()的方法。
+finalize()并不是C++中的析构函数。在C++中，对象一定会被销毁(如果程序中没有缺陷的话);而Java里的对象却并非总是被垃圾回收。或者换句话说：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;对象可能不被垃圾回收。&lt;/li&gt;
+  &lt;li&gt;垃圾回收并不等于“析构”。&lt;/li&gt;
+  &lt;li&gt;垃圾回收只与内存有关。&lt;br /&gt;
+??  pass for now&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;581-可变参数列表&quot;&gt;5.8.1 可变参数列表&lt;/h4&gt;
+
+&lt;p&gt;&lt;span id=&quot;CHA6&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第6章-访问权限控制&quot;&gt;第6章 访问权限控制&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;public&lt;/li&gt;
+  &lt;li&gt;protected&lt;/li&gt;
+  &lt;li&gt;包访问权限(没有关键词，默认)&lt;/li&gt;
+  &lt;li&gt;private&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;63-接口和实现&quot;&gt;6.3 接口和实现&lt;/h3&gt;
+&lt;p&gt;访问权限的控制常被称为是&lt;em&gt;具体实现的隐藏&lt;/em&gt;。把数据和方法包装进类中， 以及具体实现的隐藏， 常共同被称作是封装。&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;CHA7&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第7章-复用类&quot;&gt;第7章 复用类&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;组合(has-a)&lt;/li&gt;
+  &lt;li&gt;继承(is-a)&lt;/li&gt;
+  &lt;li&gt;代理&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;71-组合语法&quot;&gt;7.1 组合语法&lt;/h3&gt;
+&lt;p&gt;将对象的引用置于新类中即可。&lt;/p&gt;
+
+&lt;h3 id=&quot;72-继承语法&quot;&gt;7.2 继承语法&lt;/h3&gt;
+&lt;p&gt;通过关键字extends而实现的，当这么做时， 会自动得到基类中所有的域和方法。&lt;/p&gt;
+
+&lt;h3 id=&quot;78-final关键字&quot;&gt;7.8 final关键字&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;数据&lt;/li&gt;
+  &lt;li&gt;方法&lt;/li&gt;
+  &lt;li&gt;类&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;span id=&quot;CHA8&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第8章-多态&quot;&gt;第8章 多态&lt;/h2&gt;
+
+&lt;p&gt;&lt;span id=&quot;CHA9&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第9章-接口&quot;&gt;第9章 接口&lt;/h2&gt;
+
+&lt;p&gt;&lt;span id=&quot;CHA10&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第10章-内部类&quot;&gt;第10章 内部类&lt;/h2&gt;
+&lt;p&gt;内部类与组合是完全不同的概念。：将类置于其他类的内部。#名字隐藏和组织代码的模式&lt;br /&gt;
+链接到外部类：内部类还拥有外围类的所有元素的访问权。&lt;/p&gt;
+
+&lt;h3 id=&quot;103-使用this与new&quot;&gt;10.3 使用.this与.new&lt;/h3&gt;
+&lt;p&gt;如果你需要生成对外部类对象的引用，可以使用外部类的名字后面紧跟圆点和this。 这样产生的引用自动地具有正确的类型。&lt;/p&gt;
+
+&lt;p&gt;有时你可能想要告知某些其他对象， 去创建其某个内部类的对象。 要实现此目的， 你必须在new表达式中提供对其他外部类对象的引用，这时需要使用.new语法。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 31 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//java/2017/01/31/ThingkingInJava.html</link>
+        <guid isPermaLink="true">http://localhost:4000//java/2017/01/31/ThingkingInJava.html</guid>
+        
+        <category>Java</category>
+        
+        
+        <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>3 Steps (2 minutes) to Setup Your Personal Website with Jalpc</title>
+        <description>&lt;p&gt;Everyone wants to have a personal website, you can display your infomation to public, post blogs and make friends. If you are CS engineer, haveing a self website will benefit your interview.&lt;/p&gt;
+
+&lt;p&gt;So, if you like this website &lt;a href=&quot;https://jarrekk.github.io/Jalpc/&quot;&gt;https://jarrekk.github.io/Jalpc/&lt;/a&gt; or &lt;a href=&quot;http://www.jarrekk.com&quot;&gt;http://www.jarrekk.com&lt;/a&gt; and are willing to have a website, here is a way to build your website in 3 steps(2 minutes). Following are steps to setup your website(make sure you have basic knowledge of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; and &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;, if you want to custom css/js &lt;a href=&quot;https://github.com/npm/npm&quot;&gt;NPM&lt;/a&gt; is needed):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fork &lt;a href=&quot;https://github.com/jarrekk/Jalpc&quot;&gt;this project – Jalpc&lt;/a&gt; at &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;. If you want to edit website at github, do it as following gif or clone forked repository. &lt;code class=&quot;highlighter-rouge&quot;&gt;git clone git@github.com:github_username/Jalpc.git&lt;/code&gt;.&lt;/p&gt;
+
+    &lt;p&gt;&lt;!-- ![edit](/Jalpc/static/assets/img/blog/3steps/edit.gif) --&gt;
+ &lt;img src=&quot;/Jalpc/static/assets/img/blog/3steps/edit.gif&quot; width=&quot;75%&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter into repository directory and edit following file list:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;_config.yml&lt;/strong&gt;: edit ‘Website settings’, ‘author’, ‘comment’ and ‘analytics’ items.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;_data/landing.yml&lt;/strong&gt;: custom sections of index page.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;_data/index/&lt;/strong&gt;: edit sections’ data to yours at index page, please notice comment at each file.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;_data/blog.yml&lt;/strong&gt;: edit navbar(categories) of blog page, if you have different/more blog page, copy &lt;code class=&quot;highlighter-rouge&quot;&gt;blog/python.html&lt;/code&gt; and change it to your category HTML file, and edit &lt;strong&gt;Python&lt;/strong&gt;, &lt;strong&gt;/python/&lt;/strong&gt; to your category name at items &lt;strong&gt;title&lt;/strong&gt; and &lt;strong&gt;permalink&lt;/strong&gt;, make sure title is the same as permalink but capitalized first letter(except HTML).&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;CNAME&lt;/strong&gt;: If you wanna release website at your own domain name: edit it and create &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch; if you want to use &lt;em&gt;github_username.github.io&lt;/em&gt;: leave it blank.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Go to repo’s settings panel, config &lt;strong&gt;GitHub Pages&lt;/strong&gt; section to make sure website is released.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Push changes to your github repository and view your website, done!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;From now on, you can post your blog to this website by creating md files at &lt;code class=&quot;highlighter-rouge&quot;&gt;post/&lt;/code&gt; directory and push it to GitHub, you can clear files at this directory before you post blogs.&lt;/p&gt;
+
+&lt;p&gt;If you like this repository, I appreciate you star this repository. Please don’t hesitate to mail me or post issues on GitHub if you have any questions. Hope you have a happy blog time!😊&lt;/p&gt;
+</description>
+        <pubDate>Tue, 31 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//html/2017/01/31/3-steps-to-setup-website-with-Jalpc.html</link>
+        <guid isPermaLink="true">http://localhost:4000//html/2017/01/31/3-steps-to-setup-website-with-Jalpc.html</guid>
+        
+        <category>Jalpc</category>
+        
+        <category>Jekyll</category>
+        
+        
+        <category>HTML</category>
+        
+      </item>
+    
+      <item>
+        <title>Python 笔记</title>
+        <description>&lt;h1 id=&quot;python笔记&quot;&gt;python笔记&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#function&quot;&gt;函数&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ex40&quot;&gt;Modules,Classes and Objects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;传值还是传引用&quot;&gt;传值还是传引用&lt;/h2&gt;
+&lt;p&gt;python不允许程序员选择采用传值还是传引用。Python参数传递采用的肯定是“传对象引用”的方式。这种方式相当于传值和传引用的一种综合。如果函数收到的是一个可变对象（比如字典或者列表）的引用，就能修改对象的原始值－－相当于通过“传引用”来传递对象。如果函数收到的是一个不可变对象（比如数字、字符或者元组）的引用，就不能直接修改原始对象－－相当于通过“传值’来传递对象。&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;function&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;函数&quot;&gt;函数&lt;/h2&gt;
+
+&lt;h3 id=&quot;split&quot;&gt;split():&lt;/h3&gt;
+&lt;p&gt;split(s [,sep [,maxsplit]]) -&amp;gt; list of strings&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Return a list of the words in the string s, using sep as the
+delimiter string.  If maxsplit is given, splits at no more than
+maxsplit places (resulting in at most maxsplit+1 words).  If sep
+is not specified or is None, any whitespace string is a separator.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;sorted&quot;&gt;sorted():&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; sorted(iterable, cmp=None, key=None, reverse=False) --&amp;gt; new sorted list   ### filter():   filter()函数接受一个函数f和一个list，函数f的作用是对每个元素进行判断，返回True或False，filter根据判断结果自动过滤掉不符合条件的元素，返回由符合条件元素组成的新list。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;lambda&quot;&gt;lambda():&lt;/h3&gt;
+&lt;p&gt;lambda函数也叫匿名函数，lambda [arg1[,arg2,…]]:expression,冒号前是参数，可以由多个，由逗号隔开，冒号右边为返回值。&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;ex40&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;modulesclasses-and-objects&quot;&gt;Modules,Classes and Objects&lt;/h2&gt;
+&lt;p&gt;参考&lt;a href=&quot;https://learnpythonthehardway.org/book/ex40.html&quot;&gt;LearnPythonTheHardWay&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;modules-are-like-dictionaries&quot;&gt;Modules Are Like Dictionaries&lt;/h3&gt;
+&lt;p&gt;You can think about a module as a specialized dictionary that can store Python code so you can access it with . operator.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;A python file with some function or variables in it&lt;/li&gt;
+  &lt;li&gt;You import that file&lt;/li&gt;
+  &lt;li&gt;And you can access the functions or  variables in that module with the . operator.&lt;br /&gt;
+this means dictionaries and Modules have a very common pattern in Python:&lt;/li&gt;
+  &lt;li&gt;Take a key = value style container.&lt;/li&gt;
+  &lt;li&gt;Get something out of it by the key’s name.&lt;br /&gt;
+In the case of the dictionary,the key is a string and the syntax is [key].In the case of module,the key is an identifier,and the syntax is .key.Other than that they are nearly the same thing.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;classes-are-like-modules&quot;&gt;Classes Are Like Modules&lt;/h3&gt;
+&lt;p&gt;A class is a way to take a grouping of functions and data and place them inside a container so you can access them with the .operator.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Here’s why classes are used instead of modules&lt;/em&gt;: You can take a class and use it to craft many of them and each one won’t interfere with each other.When you import a module there is only one for the entire program unless you do some monster hacks.&lt;/p&gt;
+
+&lt;h3 id=&quot;objects-are-like-import&quot;&gt;Objects Are Like Import&lt;/h3&gt;
+&lt;p&gt;When you instantiate a class what you get is called an object.You instantiate(create) a class by calling the class like it’s a function,like this:
+	class MyStuff(object):&lt;br /&gt;
+		def &lt;strong&gt;init&lt;/strong&gt;(self):&lt;br /&gt;
+			self.tangerine = “And now a thousand years between.”&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	def apple(self):
+		print &quot;I AM CLASSY APPLES!&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;python中的super&quot;&gt;python中的super&lt;/h3&gt;
+&lt;p&gt;python中的子类需要显示的调用父类的构造器，eg.:&lt;br /&gt;
+class Person(object,name):
+	def &lt;strong&gt;init&lt;/strong&gt;(self,name):
+		self.name = name
+	pass&lt;/p&gt;
+
+&lt;p&gt;class Student(Parent):
+	def &lt;strong&gt;init&lt;/strong&gt;(self,name):
+		super(Student,self).&lt;strong&gt;init&lt;/strong&gt;(name)
+		print “I’m a student,My name is “,self.name&lt;/p&gt;
+
+&lt;h3 id=&quot;inheritance-versus-composition-继承vs组合&quot;&gt;Inheritance Versus Composition (继承vs组合)&lt;/h3&gt;
+&lt;p&gt;Most of the uses of inheritance can be simplified or replaced with composition, and multiple inheritance should be avoided at all costs.&lt;/p&gt;
+&lt;h4 id=&quot;1inheritance&quot;&gt;1.Inheritance&lt;/h4&gt;
+&lt;p&gt;There are three ways that the parent and child classes can interact:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Actions on the child imply an action on the parent.&lt;/li&gt;
+  &lt;li&gt;Actions on the child override the action on the parent.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Actions on the child alter the action on the parent.&lt;/p&gt;
+
+    &lt;p&gt;class Parent(object):
+     def override(self):
+         print “PARENT override()”
+     def implicit(self):
+         print “PARENT implicit()”
+     def altered(self):
+         print “PARENT altered()”
+ class Child(Parent):
+     def override(self):
+         print “Child override()
+     def altered(self):
+         print “Child,before Parent altered()”
+         super(Child,self).altered()
+         print “Child,after Parent altered()”
+ dad = Parent()
+ son = Child()
+ dad.implicit()
+ son.implicit()&lt;/p&gt;
+
+    &lt;p&gt;dad.override()
+ son.override()&lt;/p&gt;
+
+    &lt;p&gt;dad.altered()
+ son.altered()&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;when-to-use-inheritance-or-composition&quot;&gt;When to Use inheritance or composition&lt;/h4&gt;
+&lt;p&gt;The question of “inheritance Versus composition” comes down to &lt;strong&gt;an attempt to slove the problem of reusable code&lt;/strong&gt;.inheritance solves this problem by creating a mechanism ofr you to have implied features in base classes.Composition solves this by giving you modules and the ability to call function in other classes&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+        <pubDate>Tue, 31 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//python/2017/01/31/NoteOfPython.html</link>
+        <guid isPermaLink="true">http://localhost:4000//python/2017/01/31/NoteOfPython.html</guid>
+        
+        <category>self-learning</category>
+        
+        <category>Python</category>
+        
+        
+        <category>Python</category>
+        
+      </item>
+    
+      <item>
+        <title>爬虫流程记录</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jingyan.baidu.com/article/f3ad7d0f129c7809c2345b56.html&quot; title=&quot;server&quot;&gt;配置服务器&lt;/a&gt;:主要流程参考百度经验&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#upload&quot;&gt;更改&amp;amp;上传代码&lt;/a&gt;：&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#crawl&quot;&gt;爬取&lt;/a&gt;：&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#check&quot;&gt;检测&lt;/a&gt;：&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#crawl_end&quot;&gt;爬取结束&lt;/a&gt;：
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#check_data&quot;&gt;检测数据&lt;/a&gt;：&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#post_back&quot;&gt;抓取数据回本地或上传至百度云&lt;/a&gt;：&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reCrawl&quot;&gt;再爬取&lt;/a&gt;：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;配置服务器&quot;&gt;配置服务器&lt;/h2&gt;
+&lt;p&gt;参考百度文献
+&lt;span id=&quot;upload&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;更改并上传代码&quot;&gt;更改并上传代码&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;主要是更改5个文件中的AutoSearch中的帐号为自己的信息，两个服务器各使用3个帐号（102-104,105-107）。
+    &lt;ul&gt;
+      &lt;li&gt;\ResearcherGoLinux\ResearcherGoAccounterTest\AccounterTestSpider\ResearcherGoAccounterTest\ResearcherGoAccounterTest\spiders\ResearchGoAutoSearch.py&lt;/li&gt;
+      &lt;li&gt;\ResearcherGoLinux\WOS_Spider
+        &lt;ul&gt;
+          &lt;li&gt;Spider_*...\ResearchGoAutoSearch.py&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;替换WOS_Scheduler/Jounral_list中的内容为自己的Journal_list，30个一批，末尾不能有空行&lt;/li&gt;
+  &lt;li&gt;上传代码至服务器的/tmp下（以后每爬取完成一次后用/tmp下的代码替换掉使用的代码）：windows命令行进入putty目录中并执行&lt;br /&gt;
+ pscp -r source_dir root@IP:/tmp&lt;/li&gt;
+  &lt;li&gt;putty连接到服务器，复制代码到/home下&lt;br /&gt;
+ cp -r /tmp/source_dir /home&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;span id=&quot;crawl&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;爬取&quot;&gt;爬取&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;转换换行符&lt;/strong&gt;：进入服务器中的Journal_list所在目录&lt;br /&gt;
+&lt;code&gt;sed -i &quot;s/\r//&quot; Journal_List.txt Journal_List_significance.txt&lt;/code&gt;&lt;br /&gt;
+爬取开始前开启监控进程：&lt;br /&gt;
+	1. /home/ResearcherGoLinux/WOS_Monitor/ResearcherGoMonitor/ResercherGoMonitor.py&lt;br /&gt;
+	2. /home/ResearcherGoLinux/Progress_Monitor/ProgressMonitor/ProgressMonitor.py&lt;br /&gt;
+	3. 对上面两个文件赋予777权限并执行： 
+&lt;code&gt;   
+	chmod 777 target    
+	python ./target
+&lt;/code&gt;&lt;br /&gt;
+查看本用户所在执行的进程：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+	ps -a  
+	ps -a | grep -c scrapy #应当小于开启调度程序时的输出值（一般为1）  
+	ps -a | grep -c python
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;查看空间使用：&lt;br /&gt;
+&lt;code&gt;Top&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;开始爬取：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;进入/home/ResearcherGoLinux/WOS_Scheduler/ResearcherGoScheduler/ 写777权限给ResearcherGoScheduler.py并执行&lt;/li&gt;
+  &lt;li&gt;输入最大scrapy数：1&lt;/li&gt;
+  &lt;li&gt;输入爬取期刊的起始与结束号&lt;/li&gt;
+  &lt;li&gt;priority：General&lt;/li&gt;
+  &lt;li&gt;input：Paper&lt;/li&gt;
+  &lt;li&gt;input：year&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;span id=&quot;crawl_end&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;爬取结束&quot;&gt;爬取结束&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;调度程序执行完成不一定表示已经爬取结束，需要查看是否还有scrapy进程在执行，若没有则代表爬取结束&lt;/em&gt;：&lt;br /&gt;
+&lt;code&gt;  
+	ps -a | grep -c scrapy
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;check_data&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;检测数据&quot;&gt;检测数据&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;查看ScheduleData（已经调度的期刊）&lt;/li&gt;
+  &lt;li&gt;ProgressData（已经爬取的期刊）&lt;/li&gt;
+  &lt;li&gt;/WOS_Spider/ &lt;em&gt;General和New_Data是需要传回的数据文件夹&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;/Data/General&lt;/li&gt;
+      &lt;li&gt;/Json_Data/New_Data&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span id=&quot;post_back&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;数据传回&quot;&gt;数据传回&lt;/h3&gt;
+&lt;p&gt;先将数据（General&amp;amp;New_Data）压缩到/tmp下,最好使用相对路径(先进入到General或New_Data所在的目录下):&lt;br /&gt;
+&lt;code&gt;  
+	zip -r /tmp/xxx.zip General  
+    zip -r /tmp/xxx.zip New_Data  
+&lt;/code&gt;
+利用pscp将数据传回：&lt;br /&gt;
+&lt;code&gt;
+	pscp root@IP:/tmp/source.zip target.zip 
+&lt;/code&gt;
+利用百度云将数据传回：&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;reCrawl&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;再次爬取&quot;&gt;再次爬取&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;再次爬取前将/home下的代码删除并从/tmp下重新复制过来. 将/tmp下的压缩数据也删除避免与后面的重复
+&lt;code&gt;
+    rm -r target  
+    cp -r /tmp/target /home  
+&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;测试帐号： ResearcherGoLinux\ResearcherGoAccounterTest\AccounterController\AccounterCScheduler.py:
+    赋权限并执行-&amp;gt;input:Personal…&lt;/li&gt;
+  &lt;li&gt;重复爬取流程&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Tue, 31 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//basic/2017/01/31/Crawler.html</link>
+        <guid isPermaLink="true">http://localhost:4000//basic/2017/01/31/Crawler.html</guid>
+        
+        <category>流程记录</category>
+        
+        
+        <category>Basic</category>
+        
+      </item>
+    
+      <item>
+        <title>Markdowntest</title>
+        <description>&lt;script src=&quot;raphael-min.js&quot;&gt;&lt;/script&gt;
 
 &lt;h1 id=&quot;this-a-testh1&quot;&gt;this a test,H1&lt;/h1&gt;
 &lt;p&gt;这是一个md文件测试,H2
 —&lt;/p&gt;
 &lt;h1 id=&quot;这是h1&quot;&gt;这是H1&lt;/h1&gt;
-&lt;h1 id=&quot;这是h2&quot;&gt;这是H2&lt;/h1&gt;
-&lt;p&gt;#######这是H6&lt;/p&gt;
+&lt;h2 id=&quot;这是h2&quot;&gt;这是H2&lt;/h2&gt;
+&lt;p&gt;####### 这是H6&lt;/p&gt;
 
 &lt;p&gt;区块引用 Blockquotes&lt;/p&gt;
 &lt;blockquote&gt;
@@ -24,22 +751,26 @@ wjlkjlkjlk
 
 &lt;blockquote&gt;
   &lt;ol&gt;
-    &lt;li&gt;asd
+    &lt;li&gt;asd&lt;br /&gt;
 2.fasfw&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;*red
-*Green
-*Blue&lt;/p&gt;
-
-&lt;p&gt;+Red
-+Green
-+Blue&lt;/p&gt;
-
-&lt;p&gt;-Red
--Green
--Blue&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;red&lt;/li&gt;
+  &lt;li&gt;Green&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Blue&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Red&lt;/li&gt;
+  &lt;li&gt;Green&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Blue&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Red&lt;/li&gt;
+  &lt;li&gt;Green&lt;/li&gt;
+  &lt;li&gt;Blue&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Bird&lt;/li&gt;
@@ -47,14 +778,16 @@ wjlkjlkjlk
   &lt;li&gt;Parish&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;*Lorem inalsnlj
- adwawewerawr
-*jwkqljeqwhuohaljkj donawnklje&lt;/p&gt;
-
-&lt;p&gt;*bird
-*magic&lt;/p&gt;
-
 &lt;ul&gt;
+  &lt;li&gt;Lorem inalsnlj
+adwawewerawr&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;jwkqljeqwhuohaljkj donawnklje&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;bird&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;magic&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;A list item with a blockquote:
     &lt;blockquote&gt;
       &lt;p&gt;This is a blockquote
@@ -64,18 +797,22 @@ inside a list item&lt;/p&gt;
   &lt;li&gt;一列表项包含一个列表区块：
   &amp;lt;代码挖掘了空间了空间啊三等了for
   for item in items:
-      x = y&amp;gt;
-123. 这是数字123&lt;/li&gt;
+      x = y
+    &lt;blockquote&gt;
+
+      &lt;p&gt;123. 这是数字123&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;这是一个普通段落：
+&lt;p&gt;这是一个普通段落：&lt;br /&gt;
 	这是一个代码区块。&lt;/p&gt;
 
 &lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tell application &quot;Foo&quot;
 	beep
-end tell *********** -------
+end tell   *********** -------
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -106,102 +843,286 @@ c2(yes)-&amp;gt;io-&amp;gt;e
 c2(no)-&amp;gt;op2-&amp;gt;e
 ''' ```flow st=&amp;gt;start: 开始1 e=&amp;gt;end: 结束1 op=&amp;gt;operation: 我的操作2 cond=&amp;gt;condition: 确认？ st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op ```
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><summary type="html">this a test,H1
-这是一个md文件测试,H2
-—
-这是H1
-这是H2
-#######这是H6</summary></entry><entry><title type="html">爬虫流程记录&amp;amp;熟悉MarkDown!</title><link href="http://localhost:4000/jekyll/update/2016/12/30/%E7%88%AC%E8%99%AB%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95.html" rel="alternate" type="text/html" title="爬虫流程记录&amp;熟悉MarkDown!" /><published>2016-12-30T11:25:36+08:00</published><updated>2016-12-30T11:25:36+08:00</updated><id>http://localhost:4000/jekyll/update/2016/12/30/%E7%88%AC%E8%99%AB%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2016/12/30/%E7%88%AC%E8%99%AB%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.4/flowchart.js&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;配置服务器：
-（更改代码）：
-爬取：
-检测检查：
-爬取结束：
-检测数据：
-抓取数据回本地或上传至百度云：
-再爬取：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;st=&amp;gt;start: Start
-i=&amp;gt;inputoutput: 输入年份n
-cond1=&amp;gt;condition: n能否被4整除？
-cond2=&amp;gt;condition: n能否被100整除？
-cond3=&amp;gt;condition: n能否被400整除？
-o1=&amp;gt;inputoutput: 输出非闰年
-o2=&amp;gt;inputoutput: 输出非闰年
-o3=&amp;gt;inputoutput: 输出闰年
-o4=&amp;gt;inputoutput: 输出闰年
-e=&amp;gt;end
-st-&amp;gt;i-&amp;gt;cond1
-cond1(no)-&amp;gt;o1-&amp;gt;e
-cond1(yes)-&amp;gt;cond2
-cond2(no)-&amp;gt;o3-&amp;gt;e
-cond2(yes)-&amp;gt;cond3
-cond3(yes)-&amp;gt;o2-&amp;gt;e
-cond3(no)-&amp;gt;o4-&amp;gt;e
-&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+</description>
+        <pubDate>Wed, 04 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//2017/01/04/MarkdownTest.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/01/04/MarkdownTest.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>TCP/IP笔记</title>
+        <description>&lt;h2 id=&quot;chapter-1概述&quot;&gt;Chapter 1：概述&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-flow&quot;&gt;st=&amp;gt;start: Start
-e=&amp;gt;end: End
-op1=&amp;gt;operation: My Operation
-sub1=&amp;gt;subroutine: My Subroutine
-cond=&amp;gt;condition: Yes or No?
-io=&amp;gt;inputoutput: catch something...
-st-&amp;gt;op1-&amp;gt;cond
-cond(yes)-&amp;gt;io-&amp;gt;e
-cond(no)-&amp;gt;sub1(right)-&amp;gt;op1
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/jfgn8R1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;’'’flow
-st=&amp;gt;start: Start
-e=&amp;gt;end: End
-op1=&amp;gt;operation: My Operation
-sub1=&amp;gt;subroutine: My Subroutine
-cond=&amp;gt;condition: Yes or No?
-io=&amp;gt;inputoutput: catch something…
-st-&amp;gt;op1-&amp;gt;cond
-cond(yes)-&amp;gt;io-&amp;gt;e
-cond(no)-&amp;gt;sub1(right)-&amp;gt;op1
-‘’’&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/sWF6UWx.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-flow&quot;&gt;start=&amp;gt;start: 开始
-login=&amp;gt;operation: 登陆
-isLogin=&amp;gt;condition: 是否已登陆？
-test=&amp;gt;operation: 进行测试
-end=&amp;gt;end: 结束
-start-&amp;gt;isLogin
-isLogin(yes)-&amp;gt;test
-isLogin(no)-&amp;gt;login-&amp;gt;test
-test-&amp;gt;end
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;start=&amp;gt;start: 开始
-login=&amp;gt;operation: 登陆
-isLogin=&amp;gt;condition: 是否已登陆？
-test=&amp;gt;operation: 进行测试
-end=&amp;gt;end: 结束
-start-&amp;gt;isLogin
-isLogin(yes)-&amp;gt;test
-isLogin(no)-&amp;gt;login-&amp;gt;test
-test-&amp;gt;end
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;为何将网络层和运输层划分为两个不同的层次&lt;/em&gt;：&lt;br /&gt;
+  将视野从单个网络扩展到一组网络，构造互联网最简单的方法是把两个或者多个网络通过&lt;strong&gt;路由器&lt;/strong&gt;进行连接。路由器(Router)的好处是&lt;em&gt;为不同类型的物理网络提供连接&lt;/em&gt;。&lt;br /&gt;
+                   &lt;img src=&quot;http://i.imgur.com/nAwAJ9t.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-flow&quot;&gt;st=&amp;gt;start: 开始1
-e=&amp;gt;end: 结束1
-op=&amp;gt;operation: 我的操作2
-cond=&amp;gt;condition: 确认？
-st-&amp;gt;op-&amp;gt;cond
-cond(yes)-&amp;gt;e
-cond(no)-&amp;gt;op
-&lt;/code&gt;&lt;/pre&gt;</content><summary type="html">配置服务器：
-（更改代码）：
-爬取：
-检测检查：
-爬取结束：
-检测数据：
-抓取数据回本地或上传至百度云：
-再爬取：</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2016/12/30/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2016-12-30T11:25:36+08:00</published><updated>2016-12-30T11:25:36+08:00</updated><id>http://localhost:4000/jekyll/update/2016/12/30/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2016/12/30/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;p&gt;在TCP/IP协议族中，&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;网络层IP提供的是一种&lt;em&gt;不可靠&lt;/em&gt;服务。它只是尽可能快地把分组从源节点送到目的结点，但是不提供任何可靠性保证。&lt;/li&gt;
+  &lt;li&gt;TCP在不可靠的IP层上提供了一个&lt;em&gt;可靠的运输层&lt;/em&gt;。为了提供这种可靠的服务，TCP采用了&lt;em&gt;超时重传&lt;/em&gt;、&lt;em&gt;发送和接受端到端&lt;/em&gt;的确认分组等机制。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;从定义上看，一个路由器具有两个或多个网络接口层（因为它连接了两个或者多个网络）&lt;/p&gt;
+
+&lt;p&gt;互联网的目的之一是&lt;em&gt;在应用程序中隐藏所有的物理细节&lt;/em&gt;。应用层不能关心也不能关心一台主机是在以太网上而另一台主机是在令牌环网上，他们通过该路由器进行互连。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;网桥在链路层上对网络进行互连，使得多个局域网（LAN）组合在一起，这样对上层来好像是一个局域网。&lt;/li&gt;
+  &lt;li&gt;路由器在网络层上对网络进行互连，TCP/IP倾向于使用路由器而不是网桥来连接网络。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;13-tcpip的分层&quot;&gt;1.3 TCP/IP的分层&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/XUIm4XN.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;互联网上的&lt;em&gt;每个&lt;/em&gt;&lt;strong&gt;接口&lt;/strong&gt;&lt;em&gt;必须有一个唯一的Internet地址&lt;/em&gt;。多接口主机具有多个IP地址。&lt;/p&gt;
+
+&lt;h2 id=&quot;15-域名系统&quot;&gt;1.5 域名系统&lt;/h2&gt;
+&lt;p&gt;在TCP/IP领域中，域名系统（DNS）是一个分布的数据库，由它来提供&lt;em&gt;IP地址和主机名之间的映射信息&lt;/em&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;16-封装&quot;&gt;1.6 封装&lt;/h2&gt;
+
+</description>
+        <pubDate>Fri, 30 Dec 2016 11:25:36 +0800</pubDate>
+        <link>http://localhost:4000//basic/2016/12/30/NoteofTCP-IP.html</link>
+        <guid isPermaLink="true">http://localhost:4000//basic/2016/12/30/NoteofTCP-IP.html</guid>
+        
+        <category>TCP/IP</category>
+        
+        
+        <category>Basic</category>
+        
+      </item>
+    
+      <item>
+        <title>git使用笔记</title>
+        <description>&lt;h2 id=&quot;概念&quot;&gt;概念&lt;/h2&gt;
+&lt;p&gt;&lt;span id=&quot;concept&quot;&gt;&lt;/span&gt;
+&lt;strong&gt;&lt;em&gt;vcs:版本控制系统&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+　　通过使用git仓库，可以将文件或项目回溯到之前的状态，比较文件的变化细节。&lt;/p&gt;
+
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://git-scm.com/book/zh/v1&quot;&gt;Pro git&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;GitHub入门与实践&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;常用命令：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;add:使用git add命令将文件加入暂存区，再通过git commit提交,git add -A&lt;/td&gt;
+          &lt;td&gt;git add -u&lt;/td&gt;
+          &lt;td&gt;git add -i&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;commit&lt;/li&gt;
+  &lt;li&gt;push:执行push,git上的仓库就会被更新&lt;/li&gt;
+  &lt;li&gt;clone&lt;/li&gt;
+  &lt;li&gt;status&lt;/li&gt;
+  &lt;li&gt;log：see what happened&lt;/li&gt;
+  &lt;li&gt;pull and request:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;1基本操作&quot;&gt;1.基本操作&lt;/h2&gt;
+&lt;p&gt;主要是记录GitHub入门与实践的第四章的操作。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git init：在一个目录下执行git init来初始化仓库。&lt;br /&gt;
+执行成功后会在该目录下生成.git目录。这个.git目录里存储着管理当前目录内容所需的仓库数据。这个目录中的内容被称为&lt;em&gt;“附属于该仓库的工作树”&lt;/em&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git status:查看仓库的状态。&lt;br /&gt;
+&lt;img src=&quot;http://i.imgur.com/DLFiaJ5.png&quot; alt=&quot;&quot; /&gt;
+尚没有可提交的内容，是因为当前我们建立的这个仓库中还没有记录任何文件的任何状态。建立一个README.md文件作为管理对象（似乎不是必要的），位第一次提交做前期准备。（touch命令是将已存在的文件的时间标签更新为系统当前的时间或创建新的空文件的命令）
+  $touch README.md&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git add：向暂存区中添加文件。&lt;br /&gt;
+如果只是使用Git仓库的工作树创建了文件，那么该文件并不会被记录入Git仓库的版本管理对象当中，而显示在&lt;strong&gt;Untracked files&lt;/strong&gt;里。&lt;br /&gt;
+要想让文件成为GIt仓库的管理对象,就需要使用git add命令将其加入暂存区(Stage 或者 Index)中。暂存区是提交之前的一个临时区域。
+  $ git add README.md
+  $ git status&lt;br /&gt;
+将文件加入暂存区后，git status命令的显示结果发生了变化，添加的文件显示在Changes to be committed中。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git commit:保存仓库的历史记录&lt;br /&gt;
+　　git commit命令可以将当前暂存区中文件实际保存到仓库的历史记录中。通过这些记录，我们就可以在工作树中复原文件。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;……记述一行提交信息&lt;br /&gt;
+  $ git commit -m “Rename files to english name”&lt;br /&gt;
+-m 参数后的”“中称作提交信息，是对这个提交的概述。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;…..记录详细的提交信息&lt;br /&gt;
+想要记述得更加详细，请不加-m，直接执行git commit.执行后编辑器就会启动。&lt;br /&gt;
+提交信息的格式如下：&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;第一行：用一行文字简述提交的更改内容&lt;/li&gt;
+      &lt;li&gt;第二行：空行&lt;/li&gt;
+      &lt;li&gt;第三行以后：记述更改的原因和详细内容&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;按照上面的格式输入， 今后边可以通过确认日志的命令或工具看到这些信息。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;git log:查看提交日志&lt;br /&gt;
+可以查看以往仓库中提交的日志，其中包含提交操作的哈希值，在其他命令中，在指向这个提交时会用到这个hash值。
+    &lt;ul&gt;
+      &lt;li&gt;git log –pretty=short:只显示提交信息的第一行&lt;/li&gt;
+      &lt;li&gt;git log dirname（or filename）：只显示该目录下（文件）的日志&lt;/li&gt;
+      &lt;li&gt;git log -p:显示文件的变动。eg.$ git log -p README.md&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;git diff:查看工作树与暂存区更改前后的差别。在执行git commit之前先执行git diff HEAD命令，查看本次提交与上次提交之间有什么差别。HEAD是指向当前分支中最新一次提交的指针。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2分支的操作&quot;&gt;2.分支的操作&lt;/h2&gt;
+&lt;p&gt;在进行多个并行作业时，我们会用到分支。master分支是Git默认创建的分支，因此基本上所有的开发都是以这个分支为中心进行的。
+&lt;img src=&quot;http://i.imgur.com/vcBzD0T.png&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+在不同的分支中，可以同时进行完全不同的作业。*等该分支的作业完成之后再与master分支合并。比如feature-A分支的作业结束后与master合并，如图4.2。&lt;br /&gt;
+&lt;img src=&quot;http://i.imgur.com/RnDd7lR.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;git branch:显示分支一览表&lt;/li&gt;
+  &lt;li&gt;git checkout -b :创建、切换分支，eg. 	$ git checkout -b feature-A,这条命令等价于下面两条命令：&lt;br /&gt;
+  $ git branch feature-A
+  $ git checkout feature-A&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git checkout -:切换回上一个分支。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;特性分支：集中实现单一特性，除此之外不进行任何作业的分支。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;主干分支：是特性分支的原点，同时也是合并的终点，通常使用master分支作为主干分支。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git merge:合并分支
+假设feature-A已经实现完毕，想要把它合并到主干分支master中。首先切换到master分支。&lt;br /&gt;
+  $ git checkout master&lt;br /&gt;
+然后合并feature-A分支。为了在历史记录中明确记录下本次分支合并，需要创建合并提交。因此，在合并时加上&lt;strong&gt;–no-ff&lt;/strong&gt;参数。&lt;br /&gt;
+  $ git merge –no-ff feature-A&lt;br /&gt;
+随后编辑器会启动，用于录入合并提交的信息。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;git log –graph:以图表形式查看分支。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3更改提交的操作&quot;&gt;3.更改提交的操作&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git reset:回溯历史版本&lt;br /&gt;
+要让仓库的HEAD、暂存区、当前工作树回溯到指定状态，需要用到git reset –hard命令。只要提供目标时间点的hash值，就可以完全恢复到该时间点的状态。&lt;br /&gt;
+  $ git reset –hard somehashvalue&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;消除冲突&lt;/li&gt;
+  &lt;li&gt;提交解决冲突后的结果：git add,git commit&lt;/li&gt;
+  &lt;li&gt;git commit -amend:修改提交信息。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4推送至远程仓库&quot;&gt;4.推送至远程仓库&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git remote add:添加远程仓库
+  $ git remote add origin git@github.com:username/repositoryname.git&lt;br /&gt;
+执行上述命令之后，Git会自动将目标远程仓库名称设置为origin。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git push :推送至远程仓库&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;推送至master分支：假设在master分支下进行操作&lt;br /&gt;
+  $ git push -u origin master&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 30 Dec 2016 11:25:36 +0800</pubDate>
+        <link>http://localhost:4000//mess/2016/12/30/noteOfGit.html</link>
+        <guid isPermaLink="true">http://localhost:4000//mess/2016/12/30/noteOfGit.html</guid>
+        
+        <category>git</category>
+        
+        
+        <category>Mess</category>
+        
+      </item>
+    
+      <item>
+        <title>算法笔记</title>
+        <description>&lt;h1 id=&quot;算法笔记&quot;&gt;算法笔记&lt;/h1&gt;
+
+&lt;p&gt;　　乘着上的算法导论课还有些映象，做一些记录。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;贪心算法&lt;/li&gt;
+  &lt;li&gt;动态规划
+    &lt;ul&gt;
+      &lt;li&gt;自顶向下&lt;/li&gt;
+      &lt;li&gt;自底向上&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;分治法&lt;/li&gt;
+  &lt;li&gt;动态规划&lt;/li&gt;
+  &lt;li&gt;NP问题，规约&lt;/li&gt;
+  &lt;li&gt;近似算法&lt;/li&gt;
+  &lt;li&gt;load balancing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span id=&quot;greedy&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;贪心算法&quot;&gt;贪心算法&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;it buids up a solution in small steps,choosing a desicion at each step myopically(目光短浅地) to optimize some unerlying criterion(标准)&lt;/em&gt;&lt;br /&gt;
+简而言之：由局部最优—&amp;gt;全局最优.  &lt;strong&gt;有时不存在&lt;/strong&gt;&lt;br /&gt;
+典型问题：Interval Scheduling&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;starts first(x)&lt;/li&gt;
+  &lt;li&gt;smallest interval of time (x)&lt;/li&gt;
+  &lt;li&gt;fewest conflicts (x)&lt;/li&gt;
+  &lt;li&gt;accept the request that finishes first  (yes) [O(n*logn)]d&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;divide-and-conquer-分治法&quot;&gt;Divide and conquer （分治法）&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Divide:divide the problem into one or more subproblems&lt;/li&gt;
+  &lt;li&gt;Conquer:conquer each subproblems recursively.&lt;/li&gt;
+  &lt;li&gt;combine:solution.
+eg.* 归并排序，
+    &lt;ul&gt;
+      &lt;li&gt;二分查找（binary search）&lt;/li&gt;
+      &lt;li&gt;Powering a number(乘方问题)&lt;/li&gt;
+      &lt;li&gt;Fibonacci number(斐波那契数列)：Bottom-up,&lt;/li&gt;
+      &lt;li&gt;Matrix:n&lt;em&gt;n matrix = 2&lt;/em&gt;2 block matrix of n/2*n/2 sub matrices&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 30 Dec 2016 11:25:36 +0800</pubDate>
+        <link>http://localhost:4000//basic/2016/12/30/noteForAlgorithm.html</link>
+        <guid isPermaLink="true">http://localhost:4000//basic/2016/12/30/noteForAlgorithm.html</guid>
+        
+        <category>Algorithm Design</category>
+        
+        <category>Algorithm</category>
+        
+        
+        <category>Basic</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
@@ -213,4 +1134,19 @@ cond(no)-&amp;gt;op
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 30 Dec 2016 11:25:36 +0800</pubDate>
+        <link>http://localhost:4000//html/2016/12/30/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://localhost:4000//html/2016/12/30/welcome-to-jekyll.html</guid>
+        
+        <category>jekyll</category>
+        
+        
+        <category>HTML</category>
+        
+      </item>
+    
+  </channel>
+</rss>

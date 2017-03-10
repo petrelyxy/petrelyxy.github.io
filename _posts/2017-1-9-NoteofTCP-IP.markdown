@@ -1,12 +1,13 @@
 ---
 layout: post
 title:  "TCP/IP笔记"
-date:   2017-01-09 11:25:36 +0800
-categories: TCP/IP
+date:   2016-12-30 11:25:36 +0800
+desc: "description of Jekyll."
+keywords: "TCP/IP"
+categories: [Basic]
+tags: [TCP/IP]
+icon: icon-html
 ---
-# TCP/IP笔记  
-
-  
 ## Chapter 1：概述  
 
 
