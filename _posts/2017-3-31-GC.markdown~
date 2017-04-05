@@ -1,0 +1,24 @@
+---
+layout: post
+title: "java垃圾回收"
+date:  2017-03-31 09:53:20 +0800
+desc: "Always be fimiliar with these basic skills"
+keywords: "Job"
+categories: [java]
+tags: [Job]
+icon: icon-html
+---
+Java垃圾回收主要做的是两件事：1）内存回收 2）碎片整理.  
+新生代， 老年代， eden区(优先[总是]在eden区分配对象，当eden区空间不足时， 发起一次Minor GC)， survior区，  
+Minor GC(对新生代进行gc， 一般较快)，Major GC(清理老年代)，  Full GC(清理整个堆空间-包括新生代和老年代)，  
+GC root包括：1.虚拟机栈中引用的对象 2.方法区中常量引用的对象 3.方法区中类静态属性引用的对象 4.本地方法栈JNI引用的对象   
+垃圾回收算法：1.标记-清除(效率， 碎片) 2.复制(内存缩小一半) 3.标记-压缩（标记->存活对象向一端移动->清理其他） 4.分代收集算法:新生代(Eden space,-> Survivor space(两个:from,-> to))， 老年代。根据各个年代的特点采用最适当的收集算法。  
+  
+* 分代，哪些对象应放在新生代， 哪些对象应放在老年代？  
+分代的基本假设是：绝大部分对象的生命周期都非常短。所以在大部分GC中，MinorGC占了绝大部分  
+通常新生代分为Eden, from survivor, to survivor(8:1:1);JVM每次只会使用Eden和其中一块survivor来为对象服务， 所以无论什么时候都会有一块survivor空间空余， 因此新生代实际可用空间只有90%.  
+新生代几乎时所有Java对象出生的地方， 当对象在新生代中(Eden和某一个survivor中)经历过一次minor gc后仍然存活并且能够被另外一块survivor容乃， 则使用复制算法将这些仍然存活的对象复制到另外一块survivor区域中，并将存活对象的年龄+1，然后清理掉使用中的eden和survivor区域。每经历过一次gc则年龄+1， 在年龄达到某个值的时候， 这些对象就会称为老年代。   
+一些较大的对象(需要分配连续的内存空间)则直接进入老年代。
+   
+
+

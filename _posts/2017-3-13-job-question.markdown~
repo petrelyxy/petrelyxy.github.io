@@ -4,13 +4,13 @@ title: "找工作中的问题"
 date:  2017-03-04 09:53:20 +0800
 desc: "Always be fimiliar with these basic skills"
 keywords: "Job"
-categories: [Mess]
+categories: [Java]
 tags: [Job]
 icon: icon-html
 ---
 ### 面试中的问题
 
-1. [HashMap的原理，][q1.1] [为什么不是线程安全的?]][q1.2]
+1. [HashMap的原理，][q1.1] [为什么不是线程安全的?][q1.2]
 2. 类的加载机制
 3. [String， StringBuffer， StringBuilder的区别。][q3]
 4. 简述List， set， Map的区别
@@ -18,6 +18,8 @@ icon: icon-html
 6. object类有哪些方法， hashcode， equals 和 ==的区别。
 7. [classloader, 动态加载；][q7]
 8. [垃圾回收][q8]
+9. 两个list快速去重。（其实是一个排序问题）1. 挨个比(蠢)， 对于实现comparable接口的->2. 二叉搜索树(红黑树，普通二叉搜索树)；3. HashMap根据Key散列，value为出现次数， 查找到了就将value+1;
+10. 寻找中位数：利用快速排序中的切分
 
 ## 紧急项：
 1. 熟练掌握链表、 树、 栈、 队列和哈希表以及他们的操作，（链表和二叉树），**红黑树(一种平衡树)**
@@ -26,17 +28,25 @@ icon: icon-html
 
 1. session与cookie的原理与比较
 2. 泛型的原理, 泛型的各种写法。
-3. 各种容器的深入研究
-4. 求最长子串
+3. [各种容器的深入研究][container]
+4. 求最长子串:动态规划
 5. 各种排序与查找
-6. 并行与并发的区别
+	1. 快速排序
+	2. 堆排序
+	3. 归并排序
+	4. 选择排序
+	5. 插入排序
+	6. 二分插入排序
+	7. 希尔排序
+	8. 冒泡排序
 7. Java的内存模型与垃圾回收
 8. Top k (调用基于堆实现的优先队列)
 9. 数据库
-10. 熟悉的设计模式 ？？
+10. 熟悉的设计模式 ？？(重点掌握单例模式， 工厂模式和观察者模式)
 11. 线程安全，线程的状态，线程池
 12. gc算法
-13. finally是不是一定会执行
+13. finally是不是一定会执行。  
+答：不是，例如内存溢出或者System.exit(0)。
 14. IO，NIO
 15. 多线程
 16. 树
@@ -44,11 +54,15 @@ icon: icon-html
 18. 接口的作用. extends and implements ?? abstract class
 	接口:	1. set of methods.
 		2. common functionality among set of classes. 
-19. java中hashmap与hashtable的区别
+
+	接口可以被称为完全抽象的类， 因为它并没有提供功能的任何具体实现，而抽象类除了抽象方法和属性外，还可以有具体的实现。
+19. Hashmap与Hashtable的区别
 20. Iterable， iterator()
 21. Spring,切面编程(Aspect-oriented programming)， 多线程锁, IOC(Inversion of Control)
 22. 迭代器
-23. return de zuoyong
+23. return的作用
+24. java的监视器模式
+25. final：对于一个final变量，如果是基本数据类型的变量，则其数值一旦在初始化之后便不能更改；**如果是引用类型的变量，则在对其初始化之后便不能再让其指向另一个对象**。
 
 
 <span id = "21"></span>
@@ -64,13 +78,16 @@ icon: icon-html
 4. 归并排序：将两个有序数组归并成一个更大的有序数组。  
    先递归地将它分成两半排序， 然后将结果归并起来。时间：O(N*logN),空间：O(N)  
    运用了分治的思想。不适用与小数组
-5. **快速排序**:分治的排序算法，将一个数组*切分*成两个子数组， 将两部分独立地进行排序。如何进行切分是快速排序的关键。  
-6. **堆排序**：典型用例，基于二叉堆秋姐Top K问题。
+5. **快速排序**:分治的排序算法，将一个数组*切分*成两个子数组， 将两部分独立地进行排序。如何进行切分是快速排序的关键。每一次切分都是将切分元素j放到了排序的最终位置,且a[lo..j-1]<= a[j] <=a[j+1...hi]  
+6. **堆排序**：典型用例，基于二叉堆求解Top K问题。
 
 ## 查找
 三种经典的数据类型：
 1. 二叉查找树：理想状态复杂度为logN，但由于插入可能不平衡，导致最坏结果可能复杂度为N(形成一个链表模式)。  
-2. **红黑树**：平衡树，在插入和删除时保持平衡， 由此实现了查找复杂度为logN.  
+2. **红黑树**：平衡树，在插入和删除时保持平衡， 由此实现了查找复杂度为logN.  定义为含有红黑链接并满足下列条件的二叉查找树：	
+	1. 红链接均为左链接。
+	2. 没有任何一个结点同时和两个红链接相连。
+	3. 任意空链接到根节点的路径上的黑链接数量相同。
 3. 散列表  
 
 
@@ -78,4 +95,5 @@ icon: icon-html
 [q1.2]:http://blog.csdn.net/mydreamongo/article/details/8960667
 [q3]:http://www.cnblogs.com/A_ming/archive/2010/04/13/1711395.html
 [q7]:http://blog.csdn.net/xyang81/article/details/7292380
+[container]:http://www.cnblogs.com/LipeiNet/p/5888513.html
 
