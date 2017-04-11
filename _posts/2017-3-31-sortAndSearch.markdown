@@ -4,7 +4,7 @@ title: "排序与查找算法总结"
 date:  2017-03-31 09:53:20 +0800
 desc: "Always be fimiliar with these basic skills"
 keywords: "Job"
-categories: [Mess]
+categories: [Basic]
 tags: [Job]
 icon: icon-html
 ---

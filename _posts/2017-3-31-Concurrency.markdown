@@ -4,7 +4,7 @@ title: "并发"
 date:  2017-03-31 09:53:20 +0800
 desc: "Always be fimiliar with these basic skills"
 keywords: "Job"
-categories: [Mess]
+categories: [Java]
 tags: [Job]
 icon: icon-html
 ---

@@ -4,7 +4,7 @@ title: "java虚拟机：运行时数据区域， 垃圾回收， 类的加载机
 date:  2017-03-04 09:53:20 +0800
 desc: "Always be fimiliar with these basic skills"
 keywords: "Job"
-categories: [java]
+categories: [Java]
 tags: [JVM]
 icon: icon-html
 ---

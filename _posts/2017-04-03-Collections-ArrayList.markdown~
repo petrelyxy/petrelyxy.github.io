@@ -1,0 +1,71 @@
+---
+layout: post
+title: "【Collection】:ArrayList"
+date:  2017-03-04 09:53:20 +0800
+desc: "Always be fimiliar with these basic skills"
+keywords: "Job"
+categories: [Java]
+tags: [Collection, ArrayList]
+icon: icon-html
+---
+ArrayList的元素都存储在一个数组中，当存储元素的个数大于当前容量时则会进行扩容。  
+存储元素的数组：  
+	/**
+	* The array buffer into which the elements of the ArrayList are stored.
+	* The capacity of the ArrayList is the length of this array buffer. Any
+	* empty ArrayList with elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA
+	* will be expanded to DEFAULT_CAPACITY when the first element is added.
+	*/
+	transient Object[] elementData; // non-private to simplify nested class access  
+
+初始化相关:  
+	/**
+	* Default initial capacity.
+	*/
+	private static final int DEFAULT_CAPACITY = 10;
+
+	/**
+	* Shared empty array instance used for empty instances.
+	*/
+	private static final Object[] EMPTY_ELEMENTDATA = {};
+
+	/**
+	* Shared empty array instance used for default sized empty instances. We
+	* distinguish this from EMPTY_ELEMENTDATA to know how much to inflate when
+	* first element is added.
+	*/
+	private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};  
+当调用没有参数的构造函数时，创建一个初始大小为10的空list:  
+	/**
+	* Constructs an empty list with an initial capacity of ten.
+	*/
+	public ArrayList() {
+	this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+	}
+功能函数:  
+	trimTosize():修剪数组大小，用于缩小ArrayList的大小为当前存储元素个数的大小。会调用Arrays.copyOf(elementData, size);  
+
+辅助函数：  
+[System.arraycopy][#arraycopy](Object src, int srcPos, Object dest, int destPos, int length):用于数组之间的复制  
+src:源数组；	srcPos:源数组要复制的起始位置；
+dest:目的数组；	destPos:目的数组放置的起始位置；	length:复制的长度。
+注意：src and dest都必须是同类型或者可以进行转换类型的数组．
+
+
+扩容代码：  
+	    private void grow(int minCapacity) {
+		// overflow-conscious code
+		int oldCapacity = elementData.length;
+		
+		//尝试将扩容大小为当前大小的一半即->newCapacity = 1.5oldCapacity,若还是小于minCapacity,则扩容为minCapacity
+		int newCapacity = oldCapacity + (oldCapacity >> 1); 
+		if (newCapacity - minCapacity < 0) //若
+		    newCapacity = minCapacity;
+		if (newCapacity - MAX_ARRAY_SIZE > 0)
+		    newCapacity = hugeCapacity(minCapacity);
+		// minCapacity is usually close to size, so this is a win:
+		elementData = Arrays.copyOf(elementData, newCapacity);
+	    }
+
+[arraycopy]:http://blog.csdn.net/kesalin/article/details/566354
+	

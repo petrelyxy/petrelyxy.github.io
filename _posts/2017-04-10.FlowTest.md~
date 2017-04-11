@@ -1,0 +1,23 @@
+---
+layout: post
+title: "流程图测试"
+date:  2017-03-04 09:53:20 +0800
+desc: "Always be fimiliar with these basic skills"
+keywords: "Job"
+categories: [Java]
+tags: [Flow]
+icon: icon-html
+---
+```flow
+st=>start: 开始
+e=>end: 结束
+c1=>condition: A
+c2=>condition: B
+c3=>condition: C
+io=>inputoutput: D
+st->c1(no)->e
+c2(no)->e
+c3(no)->e
+c1(yes,right)->c2(yes,right)->c3(yes,right)->io
+io->e
+```
