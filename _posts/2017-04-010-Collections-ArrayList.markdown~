@@ -5,9 +5,10 @@ date:  2017-03-04 09:53:20 +0800
 desc: "Always be fimiliar with these basic skills"
 keywords: "Job"
 categories: [Java]
-tags: [Collection, ArrayList]
+tags: [Collection, ArrayList, PriorityQueue]
 icon: icon-html
 ---
+## ArrayList
 ArrayList的元素都存储在一个数组中，当存储元素的个数大于当前容量时则会进行扩容。  
 存储元素的数组：  
 		/**
