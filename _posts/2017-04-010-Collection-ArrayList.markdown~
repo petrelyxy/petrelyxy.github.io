@@ -1,0 +1,188 @@
+---
+layout: post
+title: "【Collection】:ArrayList and PriorityQueue"
+date:  2017-03-04 09:53:20 +0800
+desc: "Always be fimiliar with these basic skills"
+keywords: "Job"
+categories: [Java]
+tags: [Collection, ArrayList, PriorityQueue]
+icon: icon-html
+---
+## ArrayList
+ArrayList的元素都存储在一个数组中，当存储元素的个数大于当前容量时则会进行扩容。  
+存储元素的数组：  
+		/**
+		* The array buffer into which the elements of the ArrayList are stored.
+		* The capacity of the ArrayList is the length of this array buffer. Any
+		* empty ArrayList with elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA
+		* will be expanded to DEFAULT_CAPACITY when the first element is added.
+		*/
+		transient Object[] elementData; // non-private to simplify nested class access  
+
+初始化相关:  
+		/**
+		* Default initial capacity.
+		*/
+		private static final int DEFAULT_CAPACITY = 10;
+
+		/**
+		* Shared empty array instance used for empty instances.
+		*/
+		private static final Object[] EMPTY_ELEMENTDATA = {};
+
+		/**
+		* Shared empty array instance used for default sized empty instances. We
+		* distinguish this from EMPTY_ELEMENTDATA to know how much to inflate when
+		* first element is added.
+		*/
+		private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};  
+当调用没有参数的构造函数时，创建一个初始大小为10的空list:  
+		/**
+		* Constructs an empty list with an initial capacity of ten.
+		*/
+		public ArrayList() {
+		this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+		}
+功能函数:  
+	trimTosize():修剪数组大小，用于缩小ArrayList的大小为当前存储元素个数的大小。会调用Arrays.copyOf(elementData, size);  
+
+辅助函数：  
+[System.arraycopy][#arraycopy](Object src, int srcPos, Object dest, int destPos, int length):用于数组之间的复制  
+src:源数组；	srcPos:源数组要复制的起始位置；
+dest:目的数组；	destPos:目的数组放置的起始位置；	length:复制的长度。
+注意：src and dest都必须是同类型或者可以进行转换类型的数组．
+
+
+扩容代码：  
+		    private void grow(int minCapacity) {
+			// overflow-conscious code
+			int oldCapacity = elementData.length;
+		
+			//尝试将扩容大小为当前大小的一半即->newCapacity = 1.5oldCapacity,若还是小于minCapacity,则扩容为minCapacity
+			int newCapacity = oldCapacity + (oldCapacity >> 1); 
+			if (newCapacity - minCapacity < 0) //若
+			    newCapacity = minCapacity;
+			if (newCapacity - MAX_ARRAY_SIZE > 0)
+			    newCapacity = hugeCapacity(minCapacity);
+			// minCapacity is usually close to size, so this is a win:
+			elementData = Arrays.copyOf(elementData, newCapacity);
+		    }
+
+[arraycopy]:http://blog.csdn.net/kesalin/article/details/566354
+
+## PriorityQueue: 
+		private static final int DEFAULT_INITIAL_CAPACITY = 11;
+
+		/**
+		* Priority queue represented as a balanced binary heap: the two
+		* children of queue[n] are queue[2*n+1] and queue[2*(n+1)].  The
+		* priority queue is ordered by comparator, or by the elements'
+		* natural ordering, if comparator is null: For each node n in the
+		* heap and each descendant d of n, n <= d.  The element with the
+		* lowest value is in queue[0], assuming the queue is nonempty.
+		*/
+		transient Object[] queue; // non-private to simplify nested class access   
+
+可以使用Comparator来构造PriorityQueue，
+队列第一个是队列中的最小值：queue[0];
+重要函数：SiftUp（int k, E x）, siftDown(int k , E x);  
+### siftUp
+		/**
+		* Inserts item x at position k, maintaining heap invariant by
+		* promoting x up the tree until it is greater than or equal to
+		* its parent, or is the root.
+		*
+		* To simplify and speed up coercions and comparisons. the
+		* Comparable and Comparator versions are separated into different
+		* methods that are otherwise identical. (Similarly for siftDown.)
+		*
+		* @param k the position to fill
+		* @param x the item to insert
+		*/
+		private void siftUp(int k, E x) {
+		if (comparator != null)
+		    siftUpUsingComparator(k, x);
+		else
+		    siftUpComparable(k, x);
+		}
+
+		@SuppressWarnings("unchecked")
+		private void siftUpComparable(int k, E x) {
+		Comparable<? super E> key = (Comparable<? super E>) x;
+		while (k > 0) {
+		    int parent = (k - 1) >>> 1;
+		    Object e = queue[parent];
+		    if (key.compareTo((E) e) >= 0)
+			break;
+		    queue[k] = e;
+		    k = parent;
+		}
+		queue[k] = key;
+		}
+
+		@SuppressWarnings("unchecked")
+		private void siftUpUsingComparator(int k, E x) {
+		while (k > 0) {
+		    int parent = (k - 1) >>> 1;
+		    Object e = queue[parent];
+		    if (comparator.compare(x, (E) e) >= 0)
+			break;
+		    queue[k] = e;
+		    k = parent;
+		}
+		queue[k] = x;
+		}
+
+### siftDown(int k, E x):从位置k开始下沉， 直到它小于等于它的子结点或它成为一个叶子。
+		  /**
+		* Inserts item x at position k, maintaining heap invariant by
+		* demoting x down the tree repeatedly until it is less than or
+		* equal to its children or is a leaf.
+		*
+		* @param k the position to fill
+		* @param x the item to insert
+		*/
+		private void siftDown(int k, E x) {
+		if (comparator != null)
+		    siftDownUsingComparator(k, x);
+		else
+		    siftDownComparable(k, x);
+		}
+
+		@SuppressWarnings("unchecked")
+		private void siftDownComparable(int k, E x) {
+		Comparable<? super E> key = (Comparable<? super E>)x;
+		int half = size >>> 1;        // loop while a non-leaf
+		while (k < half) {
+		    int child = (k << 1) + 1; // assume left child is least
+		    Object c = queue[child];
+		    int right = child + 1;
+		    if (right < size &&
+			((Comparable<? super E>) c).compareTo((E) queue[right]) > 0)
+			c = queue[child = right];
+		    if (key.compareTo((E) c) <= 0)
+			break;
+		    queue[k] = c;
+		    k = child;
+		}
+		queue[k] = key;
+		}
+
+		@SuppressWarnings("unchecked")
+		private void siftDownUsingComparator(int k, E x) {
+		int half = size >>> 1;
+		while (k < half) {
+		    int child = (k << 1) + 1;
+		    Object c = queue[child];
+		    int right = child + 1;
+		    if (right < size &&
+			comparator.compare((E) c, (E) queue[right]) > 0)
+			c = queue[child = right];
+		    if (comparator.compare(x, (E) c) <= 0)
+			break;
+		    queue[k] = c;
+		    k = child;
+		}
+		queue[k] = x;
+		}
+

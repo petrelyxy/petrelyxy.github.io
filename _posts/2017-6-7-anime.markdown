@@ -1,0 +1,42 @@
+---
+layout: post
+title: "观看记录"
+date:  2017-04-11 09:53:20 +0800
+desc: "Always be fimiliar with these basic skills"
+keywords: "anime"
+categories: [Life]
+tags: [Anime]
+icon: icon-html
+---
+搞笑：
+  1. 男子高中生的日常
+  2. 校园迷糊大王
+  3. 奇幻自卫队
+  4. 恶魔阿萨谢尔在召唤
+  5. 邻座同学是怪咖
+
+武：
+  1. 刀语
+  2. 混沌武士
+  3. 剑锋传奇
+  4. 大剑
+
+燃：
+  1. 钢之炼金术师
+  2. Hell sing(地狱赞歌)
+
+电视剧，电影：
+
+搞笑：
+  1. Coupling，英剧
+  2. the IT crowd 英剧
+  3. how i met your mother
+  4. the bigbang theory
+
+fantasy：
+  1. Merlin
+  2. Game of Thrones
+  3. the walking dead
+  4. 指环王
+
+
