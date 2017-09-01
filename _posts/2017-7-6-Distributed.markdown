@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "�ֲ�ʽ��Ŀ���"
+title: "分布式项目相关"
 date:  2017-07-06 14:30:20 +0800
 desc: "Always be fimiliar with these basic skills"
 keywords: "Distributed, ZooKeeper, Duobbo"
@@ -8,50 +8,50 @@ categories: [Java]
 tags: [Distributed, ZooKeeper, Duobbo]
 icon: icon-html
 ---
-## ʲô�Ƿֲ�ʽ�� ��һ�дӶ��������
+## 什么是分布式？ （一切从定义出发）
   A distributed system is one in which components located at networked computers communicate and coordinate actions only by passing messages.
-�ֲ�ʽϵͳ:�ֲ����������Ӽ����ϵ������ͨ��������Ϣ�����к�Эͬ��  ���Խ������ɶ���Ķ���̡��ֲ�ʽϵͳ������ⲿ����������һ�������������
+分布式系统:分布在网络连接计算上的组件仅通过传递消息来运行和协同。  可以近似它成多机的多进程。分布式系统整体从外部来看就像是一个超级计算机。
 
-## ����ͨ�Ż���֪ʶ
-  TCP/IP,�߲�����ģ�ͣ�����IOʵ�ַ�ʽ��BIO(Blocking IO),NIO(Nonblocking IO,Reactorģʽ),AIO(AsynchronousIO,�첽IO)
-  session sticky��session���ݼ��д洢
-  ��д���룺����д�٣����ݶ�ѹ����
-  ��Դ�������������ݿ⣬����������������潨������������Դ��������Ᵽ������һ�£�ʲôʱ����������ʲôʱ�������ݿ⡣���������õ������Ĺ��̾���һ�����ݸ��ƵĹ��̡�
+## 网络通信基础知识
+  TCP/IP,七层网络模型，网络IO实现方式：BIO(Blocking IO),NIO(Nonblocking IO,Reactor模式),AIO(AsynchronousIO,异步IO)
+  session sticky和session数据集中存储
+  读写分离：读多写少，数据读压力大
+  读源：不仅仅是数据库，例如可以是搜索引擎建立的索引，读源如何与主库保持数据一致，什么时候走搜索，什么时候走数据库。构建搜索用的索引的过程就是一个数据复制的过程。
 
-## ��������
-���������ķ�ʽ���֣�1.ȫ��/���� ��ȫ������һ�ν����������������½�Ҳ�������ؽ�����������ȫ���Ļ����ϳ���������������
-		    2.ʵʱ/��ʵʱ
-## ����
-���ݻ��棺��Ҫ���ڷֵ�����ѹ����Ŀ���Ͽ����Ʒֿ���������档��š��ȡ����ݡ�
-ҳ�滺��
+## 搜索引擎
+构建索引的方式划分：1.全量/增量 （全量：第一次建立索引，可能是新建也可能是重建。增量：在全量的基础上持续更新索引。）
+		    2.实时/非实时
+## 缓存
+数据缓存：主要用于分担读的压力，目的上看类似分库和搜索引擎。存放“热”数据。
+页面缓存
 
-## ��Ϣ�м��
-�첽�ͽ���
+## 消息中间件
+异步和解耦
 
-Զ�̹��̵��úͶ�������м����
-��Ϣ�м����
-���ݷ����м��
+远程过程调用和对象访问中间件：
+消息中间件：
+数据访问中间件
 
 ThreadPoolExecutor
 
-��̬���� ������� 
+动态代理 反射机制 
 
 LVS:linux virtual server
 
-����ͨ�ţ��첽���ã����л��������л���NIO��**Future**��Future�������ڱ���ȴ��ͺϲ�����(�����ظ�����)����
+网络通信，异步调用：序列化、反序列化，NIO，**Future**，Future可以用于避免等待和合并运算(避免重复计算)。。
 
-�����ܿ���ʹӦ�ôӼ���ʽ����ֲ�ʽ������˵���վ����Խ��Խ�ḻʱ������Ӧ��Խ��Խ�Ӵ������(�����֣���**Ϊ�෽�ṩ��������**�Ĳ��Ϊ����)��
+服务框架可以使应用从集中式走向分布式，解决了当网站功能越来越丰富时，单个应用越来越庞大的问题(服务拆分，将**为多方提供公共功能**的拆分为服务)。
 
-���ؾ��ⷽʽ���������ѯ��Ȩ�ء��ڻ���������Ծ���ʱ���������ѯ�������ʵ����Ч�ʲ������ڻ������ܲ�����ʱ��Ȩ�ؿ��ԽϺõ�ƽ�⸺������Ч�ʡ�
+负载均衡方式：随机，轮询，权重。在机器性能相对均衡时，随机和轮询相对容易实现且效率不错，在机器性能不均衡时，权重可以较好地平衡负载提升效率。
 
-## ������Ӧ�õ����ʾ����˷ֲ�ʽ�ܹ����ڱ��С�
-  1. �߷����� --> �߲����ԣ��߸����� -->���ؾ���
-  2. ����չ�� --> ע����Ŀ�ṹ, �ӿڵȶ����Ƿǳ���Ҫ��
+## 互联网应用的性质决定了分布式架构势在必行。
+  1. 高访问量 --> 高并发性，高负载量 -->负载均衡
+  2. 可扩展性 --> 注重项目结构, 接口等定义是非常重要的
   3. 
 
 ## ZooKeeper
-  �����ṩ�ߺͷ���������ͨ��ע�����Ľ�����ͨ��ע������ʵ���˷����ṩ�ߺͷ���������֮��Ľ����Ȼ��Ҳ��һ��������-������ģʽ��
+  服务提供者和服务消费者通过注册中心交互，通过注册中心实现了服务提供者和服务消费者之间的解耦。显然这也是一个生产者-消费者模式。
 
-## ���ؾ���
-Ӳ���ؾ��⣺Ӳ��ʵ��
-�����ؾ��⣺hash��
+## 负载均衡
+硬负载均衡：硬件实现
+软负载均衡：轮询， 随机，hash， 最小响应时间
