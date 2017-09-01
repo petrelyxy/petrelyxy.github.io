@@ -13,7 +13,7 @@
   gh_user: kamyu104
   repo: LeetCode
   img: /static/assets/img/landing/leetcode.png
-  desc: This project is other's project. 
+  desc: This project is other's project. Programming practice.
 
 - name: FamilyCODE Wchat
   i18n: familycode
