@@ -1,11 +1,11 @@
-﻿---
+---
 layout: post
 title: "观看记录"
-date:  2017-04-11 09:53:20 +0800
-desc: "Always be fimiliar with these basic skills"
-keywords: "anime"
+date:  2017-03-22 09:53:20 +0800
+desc: "time flees"
+keywords: "record"
 categories: [Life]
-tags: [Anime]
+tags: [Anime， TV]
 icon: icon-html
 ---
 搞笑：
