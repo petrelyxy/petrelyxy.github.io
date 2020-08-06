@@ -1,0 +1,24 @@
+数据收集 -》 数据编码-》数据传输 ->数据解码 ->数据分析 ->数据存储 -》数据查询
+
+插件加载                              | 模块加载
+
+
+1. skywalking是google全链路论文"Dapper,a Large-Scale Distributed Systems Tracing Infrastructure"的实现， 并参照了open-tracing-data-model
+ 
+
+open-tracing数据模型:https://github.com/opentracing/specification/blob/master/specification.md
+
+
+需要分主题来讲
+
+一、数据收集
+
+数据: TraceSegment, Span(entry, local, exit), refs,
+数据管理: ContextManager, tracingContext
+
+1. 插件:instrumentation。  如何增强拦截并生成数据
+2. 插件的加载:
+3. trace数据在agent端的处理与转换：数据上传之前的处理， 什么时候上传？
+4. 数据上传：protobuf编码， grpc协议上传
+5. 服务端解析数据：根据需要的业务功能生成数据
+6. 数据存储

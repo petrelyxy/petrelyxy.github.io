@@ -1,0 +1,45 @@
+1. spark on yarn
+ appmaster,driver,executor
+
+executor内存: executorMemory, memoryOverhead
+
+
+
+yarn
+resourceManager, nodeManager
+以fusionInsigh开发环境为例，共有5个nodeManager，一个主ResourceManager，一个备ResourceManager。
+
+nodeManager -- cpu:16核 内存:65150MB 磁盘:480.90GB
+ResourceManager--  cpu:16核心 内存:65150MB 磁盘:330.90GB
+ 
+
+
+
+
+
+提交参数， 资源配置
+
+spark.driver.memory
+
+--num-executors
+--executor-cores
+--executor-memory
+--total-executor-cores
+
+
+
+
+--spark streaming： 参考官方文档
+
+1. input dstream and receivers : 订阅kafka多个topic时候若瓶颈出现在receiver，可启用多个receiver.
+
+
+2. output Operation On DStreams:
+
+  foreachRDD(func): Note that the function funcc is executed in the driver process running the streaming application, and will usually have RDD actions in it that will force the computation of streaming RDDS
+
+3. Design Patterns or using foreachRDD
+
+
+ 
+

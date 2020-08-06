@@ -1,0 +1,12 @@
+使用spark on yarn部署环境，通过spark streaming消费处理kafka中存储的日志
+
+kafka关键词: broker,partition, offset
+
+spark关键词:driver, executor
+
+yarn关键词:AM(Application Master), 
+
+kafka-spark streaming关键词：receiver、DirectStream
+
+
+

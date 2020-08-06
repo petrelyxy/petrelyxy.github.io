@@ -1,0 +1,41 @@
+根据skywalking源码阅读找出分析服务拓扑关系的处理逻辑
+
+
+1. 查询模块 根据查询出的结果渲染为拓扑关系图。
+org.apache.skywalking.oap.server.core.query.TopologyQueryService
+	查询条件为(DownSampling, startTime, endTime, serviceIds)
+
+根据查询得到的serviceRelationServerCalls与serverRelationClientCalls构建Topology.
+关键类：Call.CallDetail
+成员属性：
+        private String id;
+        private String source;
+        private String target;
+        private DetectPoint detectPoint;
+        private Integer componentId;
+
+
+
+
+
+2. trace数据解析入口 .... ModuleDefine->ModuleProvider->TraceModuleProvider-> SegmentParserServiceImpl->TraceAnalyzer
+
+TraceAnalyzer   ：   目前先不实现采样模块？
+
+createSpanLisener:根据moduleManager与config生成spanListener
+
+spanListener:first,exit,entry,local
+
+first:
+
+
+
+
+
+3. trace数据发送收集流程。  当前trace信息不完善，需要对照各message类的Transform方法检查。
+
+
+
+MultiScopeAnalysisListener.parseEntry
+
+

@@ -1,0 +1,8 @@
+1. 单机redis
+
+2. 集群redis
+
+3. 如何处理资源竞争？ 
+3.1 redis watch、multi、discard、execute | 要求访问的key都落在同一个节点(单机使用或集群内当)
+3.2 redis锁， 为什么不使用官方文档中的redlock  (执行顺序， 分布式统一时钟)
+3.3 lua脚本， 使用lua脚本的限制()

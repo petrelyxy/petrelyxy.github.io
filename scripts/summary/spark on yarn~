@@ -1,0 +1,7 @@
+yarn:资源管理与调度的框架, clusterManager
+
+yarn架构中的角色：client，RM，NM，AM，Container。
+
+spark架构中的角色：driver, executor.
+
+driver:rdd, job, task, stage.

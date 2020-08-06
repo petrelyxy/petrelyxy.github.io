@@ -1,0 +1,23 @@
+使用spark on yarn部署环境，通过spark streaming消费处理kafka中存储的日志
+
+kafka关键词: broker,partition, offset
+
+spark关键词:driver, executor
+
+yarn关键词:AM(Application Master), 
+
+kafka-spark streaming关键词：receiver、DirectStream
+
+
+流处理中的exactly-once语义：
+典型的流处理应用中，通常可分为三个处理阶段：receive data， transform，push output.为了保证端到端的exactly-once语义， 每一个阶段都需要做相应的设计。
+
+
+1. receive data： kafka作为上游数据流， 可以通过direct api保证exactly-once语义。 ？？ 下游重启时的offset？  需要保存offset？
+2. tranforming data: with spark rdd has already provided exactly-once semantics
+3. output operation: by default has at-least once semantics. The foreachRDD function will execute more than once if there is worker failure, thus writing same data to external storage multiple times.
+There are two approach to solve this issue, idempotent updates, and transaction updates.
+
+
+
+
