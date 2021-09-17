@@ -1,0 +1,9 @@
+1. ThreadLocalMap
+2. WeakReference
+
+
+
+衍生-->Reference
+SoftReference
+WeakReference
+PhantomReference

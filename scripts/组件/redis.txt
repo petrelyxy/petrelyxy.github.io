@@ -1,0 +1,40 @@
+redis bigkey（其实说的时bigvalue吧）
+
+redis list中元素过多有什么影响？？？ 为什么我觉得没啥？？？ （怕执行LRANGE等类似操作造成同bigkey的影响?）
+
+redis的过期策略：redis expired key的删除 ： https://www.jianshu.com/p/9352d20fb2e0
+redis的淘汰策略： LRU， LFU
+
+redis 扩容， 主从模式扩容(内存不可扩展、吞吐量不可扩展)、集群模式扩容
+
+缓存雪崩
+缓存穿透
+缓存击穿
+--https://blog.csdn.net/zeb_perfect/article/details/54135506
+
+
+
+sentinel的leader election就是raft的leader election的实现
+raft协议
+
+skiplist
+
+压缩列表
+
+*redis gossip协议是用来干什么的？ 优先级低
+
+redis实现锁 ， redLock
+
+redis lua如何保证事务执行？？（这个选学吧， 没找到过， 应该跟持久化有关）
+
+redis copyOnWrite
+
+redis rdb, aof。 |  aof与wal，为啥使用aof而不是wal
+
+如何保障缓存与数据库的一致性。 |  对于写操作， 先淘汰缓存，再更新数据库
+
+redis 集群通过分片来提供复制和故障转移功能。(SLOT)
+
+slot的hash函数为CRC16(key) mod 16484, 而CRC16函数的取值范围为65535， 为什么slot的数量是16384而不是65535？| 心跳 ，bitmap ，  对于少于1000 node的集群来说， 16K(16384)已经足够了，SLOT约多，bitmap就需要越大，那么心跳信息也就会越大
+参考文章：https://www.programmersought.com/article/33604426038/
+redis作者的回答：https://github.com/antirez/redis/issues/2576

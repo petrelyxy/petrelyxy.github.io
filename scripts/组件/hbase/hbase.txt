@@ -1,0 +1,21 @@
+bigTable tablet tablet server , chubby 分布式锁服务
+
+hbase region region server, bigtable的开源实现. 在hdfs上实现
+
+rowkey range -> tablet = region -> bad row key design -》 hot spotting -> most request on a few region server。
+
+语音导航项目中， rowkey callid 的组成 sth@电话号码 -》 sth@电话号码倒排
+
+避免hot spotting 
+1. 加盐， salting， 加随机值
+2. hashing
+
+
+row column family, column
+
+热点问题
+
+HLog（WAL）,MemStore(skiplist?),Hfile(最终存储，hdfs),BlockCache
+
+
+region预分区.

@@ -1,0 +1,37 @@
+tcpip 三次握手 四次挥手
+
+1. java中的基本类型也是对象吗？
+https://www.theserverside.com/tutorial/Why-the-8-Java-primitive-data-types-are-not-objects： Primitives 应该不是object， Wrapper class是Object
+
+
+2. java中的string为什么要设置成不可变的：因为java string被放在池中共享，修改共享对象是不安全的。 https://javarevisited.blogspot.com/2010/10/why-string-is-immutable-or-final-in-java.html#axzz6vNvwqTTy
+    java string pool:只有使用直接赋值的才会加入string pool， new出来的需要显式调用String.inter()方法。https://www.baeldung.com/java-string-pool,
+
+3. java值传递or引用传递：传共享对象（值传递的特殊情况-》复制一份引用传递）。所以修改共享对象的属性时两边都能感受， 但修改引用不会影响原方法的应用。 
+
+
+lambda表达式的原理-》编译生成一个私有静态方法。
+tcp三次握手，四次断开
+
+k路归并排序
+
+生产有一个死锁， 如何排查？  jstack, 具体咋用的查一下； 若有死锁，jstack能检测出死锁并直接给出结论
+
+jvm总结
+
+bfs dfs 二叉树代码实现
+
+kafka部分
+
+1. 高并发编程 - 线程池是如何实现的(ThreadPoolExecutor)， pool，queue， 几个参数，几个状态。 参考文档：https://tech.meituan.com/2020/04/02/java-pooling-pratice-in-meituan.html
+    
+2. Hbase是如何组织数据的， 一个完整的读取数据流程是怎么样的。  《Hbase的原理与实践》
+3. ThreadLocal的源码实现， threadlocal内存泄漏问题(为什么通常将threadlocal设为static)
+
+
+双重校验锁，单例，为什么需要volatile， 重排序。  new 关键字做了啥 有哪些步骤， 最好反编译看下
+
+
+Linux 5种IO模型
+
+为什么叫reverse proxy？

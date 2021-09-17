@@ -1,0 +1,5 @@
+Raft
+
+paxos
+
+实现了分布式一致性的组件 Zookeeper(ZAB协议， Paxos的变种)， Chubby(google服务，实现了Paxos，未开源)

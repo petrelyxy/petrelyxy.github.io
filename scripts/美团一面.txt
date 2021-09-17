@@ -1,0 +1,9 @@
+1. 项目介绍、项目难点
+2. spark的引擎， JobManager, ResourceManager, TaskManager。 spark 的任务执行 -》  
+3. hbase介绍， hbase与传统关系数据库的区别， hbase读写数据的加载流程， hbase的数据组织结构(hfile)
+4. 线程池、线程池的实现 对一半吧
+5.  ThreadLocal的实现 没答上来 
+6. JVM， 垃圾回收，  CMS回收器为什么有两个阶段不能并发。如果在并发清理阶段，对象的引用状态改变了怎么办？
+
+
+7. 编程题： 判断一个给定序列是否可能是BST的后序遍历。 

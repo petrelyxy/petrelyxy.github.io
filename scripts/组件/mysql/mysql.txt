@@ -1,0 +1,15 @@
+mysql 索引、 b树、b+树
+
+使用b+树相对于使用b树的优缺点?
+为什么叶子节点要连起来
+
+数据事务等级
+Read Uncommit
+Read commit
+Repeatable Read
+Serialize
+
+事务acid
+
+数据库锁，行锁、表锁
+

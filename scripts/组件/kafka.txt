@@ -1,0 +1,56 @@
+发布订阅， 消息队列, 解耦， 削峰、 fault tolerance （如下游消费者服务崩溃了）
+
+kafka 数据落盘流程
+
+kafka cordinator？ 什么cordinator（topic ？）
+
+broker partition。 offset zk
+
+at least once: 什么时候会多次重复投递
+exactly once: 如何实现的
+
+zero copy， DMA(Direct Memory access , nio相关), 记住图， 省去内核态readbuffer->用户态-》socketBuffer。
+直接 内核态readbuffer->socketBuffer 
+
+kafka 共识算法： zab(zookeeper),迁移到了raft(不想再依赖于zk) 
+
+分区leader:
+集群leader：？
+
+kafka 数据同步  leader follower
+
+伸缩性： 扩容， 宕机。 repartition
+
+pageCache
+
+ISR(in sync relicas) - 与参数ack配合分析 ， 与多少个partition follower commit之后才认为这个record是in sync commit了
+
+broker:一个kafka服务器，kafka集群的基本组成单元， 集群中会有一个集群leader， 负责....；
+分区会有一个分区leader，负责....
+
+zk:分布式协作组件， 提供一致性相关的支持， 如选主， 共识算法（？）,存储元数据(consumer offset)
+
+一些重要参数：
+
+服务端：
+分区数量(num partition): 与 消费者数量的关系.  主题吞吐量/消费者吞吐量 = 分区数量. (建立分区-消费者 1:1关系)
+保留期限: 时间（log.retention） 默认7天， 大小（log.retension.bytes, 作用与每个分区之上），
+
+log.segment.bytes:日志片段大小上限。
+log.segment.ms 
+
+message.max.byte:单个消息大小上限
+
+生产者：
+acks:必须有多少个分区副本收到消息，生产者才会认为写入是成功的。 
+
+消费者：
+
+session.timeout.ms: 消费者被认为死亡的时间，默认3s
+
+auto.offset.reset: 在没有读取一个没有可使用偏移量分区时的处理方式， latest，earliest
+enable.auto.commit:是否自动提交， 如果是，还可以设置提交时间间隔
+
+
+
+提交方式。

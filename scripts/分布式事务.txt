@@ -1,0 +1,11 @@
+CAP:
+    Constistance:
+    Available:
+    Partition Tolerance:
+BASE:
+    
+
+2pc(2-phrase commit)
+3pc
+
+TCC: 补偿机制， 

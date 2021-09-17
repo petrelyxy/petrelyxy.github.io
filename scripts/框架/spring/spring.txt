@@ -1,0 +1,52 @@
+ioc：
+beanFactory, ApplicationContext, AnnotationConfigApplicationContext, @Component,@ComponentScan,
+@Configuration, @Autowire, ConfigurationClassPostProcessor, Aware(观察者，callBack)
+
+aop：
+jointPoint,advice,advisor, MethodMatcher,ProxyFactory
+
+
+如何解决循环依赖, spring事务支持（aop），事务支持什么时候无效
+
+@SpringApplication-》AutoConfigrationImportSelector(META-INF/spring.factories)
+几个过程,加载，init，inject(resolve dependency)
+loadSpringFactories ->META-INF/spring.factories 
+
+SpringFactoriesLoader会读META-INF/spring.factories配置
+主要有两个地方：spring-boot,spring-boot-autoconfigure
+
+配置文件的读入
+
+application.properties 什么时候读入 被读到哪里保存了？
+
+SrpingApplication.load()->BeanDefinitionLoader.load() ->
+
+
+----
+BeanDefinition, BeanFactory, ApplicationContext,
+
+bean的生命周期。 loadBeanDefinition ..
+---
+AbstractAutowireCapableBeanFactory, BeanWrapper, AbstractBeanFactory
+
+factory dereference
+FactoryBean
+
+spring的思想是什么
+
+
+AutoConfigurationImportSelector
+
+ConfigurationClassParser 
+ConfigurationClassPostProcessor
+
+
+
+-----
+
+AOP
+
+关键类:AnnotationAwareAspectJAutoProxyCreator -> AbstractAutoProxyCreator  实现InstantiationAwareBeanPostProcessor接口(继承BeanPostProcessor接口)
+
+核心方法：postProcessBeforeInstantiation， 在target bean实例化之前执行一些逻辑。 这里即是生成代理类的地方， 底层调用AopProxy实现类(JdkDynamicAopProxy,CglibAopProxy，也就是常说的jdk动态代理和cglib的动态代理)来生成代理类,
+

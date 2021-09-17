@@ -1,0 +1,13 @@
+大数据处理、流式处理框架
+
+什么是流式处理
+
+unbounded data, time
+
+架构:
+
+如何实现内部exactly-once
+
+state,
+
+DAG 

@@ -1,0 +1,14 @@
+数据包和状态改变。
+
+如果其中某一个包丢失了会怎么办？  
+
+能不能只要两次握手？
+
+大量Timewait?
+---
+SYN,SYN ACK, ACK.   
+sequence num, ack num.
+
+数据包丢失
+
+拥塞控制

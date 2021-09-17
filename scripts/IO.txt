@@ -1,0 +1,12 @@
+
+同步阻塞
+
+异步阻塞
+
+异步非阻塞
+
+
+bio nio aio
+
+
+select， poll, epoll

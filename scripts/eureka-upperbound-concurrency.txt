@@ -1,0 +1,13 @@
+eureka已有的功能，大概时如何实现的
+eureka没有的功能， 如何设计实现
+
+为啥选ignite 为啥放弃ignite 及为啥放弃分布式semaphore
+为啥选redis， 优缺点。
+
+eureka已实现的功能 ，负载均衡方面 举例RandomRule， 限流方面 举例RateLimiter（令牌桶算法）
+
+
+tps:
+
+tomcat最大连接数、最大并发数
+

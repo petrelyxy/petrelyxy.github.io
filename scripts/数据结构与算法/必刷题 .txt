@@ -1,0 +1,19 @@
+1. 给定一个序列，判定它是否可能是BST的后序遍历
+
+2. 检测一个链表是否有环 | Floyd环检测， 记住该方法。 关键点在于理解相遇后将其中一个节点放回起点并以相同速度运动再次相遇后的位置是在环的入口。
+
+3. 拓扑排序 | 删除入度0
+
+4. 反转链表（lc206）， 每隔K个反转链表(lc25)
+
+5. 归并排序
+
+6. 删除一个BST中给定的节点。
+
+7. 实现LRU | override LinkedHashMap的removeEldestEntry(Map.Entry) 方法， 就是维护一个访问链表
+
+8. 树的直径
+
+树中与给定节点距离为为k的节点：https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/
+9. 树中距离为k的路径的数量 ： keyword : distance in tree.  题目描述：http://codeforces.com/problemset/problem/161/D
+
