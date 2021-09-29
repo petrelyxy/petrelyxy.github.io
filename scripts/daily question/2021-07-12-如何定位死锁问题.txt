@@ -1,0 +1,11 @@
+1. jstack pid 试了下jdk1.8 的jstack命令会直接检测给出死锁判断 "found one java-level deadlock; found 1 deadlock"
+
+
+
+2. 一篇好的文章：https://www.eginnovations.com/blog/troubleshooting-java-application-deadlocks-diagnosing-application-hang-situations/
+死锁下哪些表现， 如何定位
+1. 集群：性能下降，部分server stall  -> 完全stall   （因为可能只有部分server 发生了死锁。 所以到这一部分server的请求都会阻塞， 当所有server都死锁后，服务完全阻塞。）  
+2. cpu 尖刺： 由于发生死锁， 每个竞争线程都在激烈的抢夺锁对象。
+
+--
+好的定位 -> apm工具 直接给出死锁定位。

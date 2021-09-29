@@ -1,0 +1,8 @@
+1. 实现原理
+2. 公平锁还是非公平锁？
+3. 排队队列？
+4. 锁的升级机制？
+
+-----
+https://zhuanlan.zhihu.com/p/75880892
+https://blog.csdn.net/yinwenjie/article/details/84922958

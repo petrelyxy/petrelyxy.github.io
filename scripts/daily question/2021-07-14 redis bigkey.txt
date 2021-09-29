@@ -1,0 +1,11 @@
+bigkey 有什么问题？： 内存使用不均匀， 慢、阻塞
+如何查找bigkey？ redis-cli --bigkeys
+如何解决bigkey问题 -- 先看为啥会有bigkey，有没有存在不合理的地方。  拆分
+
+
+-----
+参考：https://seealso.cn/post/avoid-use-redis-bigkey
+
+
+
+---https://developpaper.com/learn-these-skills-to-keep-redis-big-key-problem-away-from-you/
